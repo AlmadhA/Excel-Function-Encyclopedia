@@ -36,9 +36,10 @@ st.markdown("""
         header[data-testid="stHeader"]::before {
             background: none !important;
         }
-            
-        header[data-testid="stHeader"] > div:first-child {
-            display: none !important;  /* hide logo default Streamlit */
+
+        /* Hilangkan logo Streamlit default, tapi biarkan toggle sidebar */
+        header[data-testid="stHeader"] > div:first-child button {
+            display: none !important;
         }
 
         /* Title */
@@ -53,15 +54,15 @@ st.markdown("""
         }
             
         /* ==============================
-           CUSTOM CODE
+           CUSTOM CODE BLOCK (Sintaks)
         ============================== */
         code {
-            font-size: 18px !important;   /* KOLOM SINTAKS */
+            font-size: 18px !important;   /* lebih besar */
             font-weight: 600 !important;
-            color: #00FFF5 !important;
+            color: #00FFF5 !important;    /* biru neon */
             background-color: #1a1f25 !important;
-            padding: 3px 6px;
-            border-radius: 6px;
+            padding: 4px 8px;
+            border-radius: 8px;
         }
             
         /* ==============================
@@ -121,13 +122,13 @@ st.markdown("""
         }
             
         /* ==============================
-           CUSTOM ALERT BOXES (INFO, SUCCESS, WARNING, ERROR)
+           CUSTOM ALERT BOXES
         ============================== */
 
         /* Info Box */
         div.stAlert[data-baseweb="notification"] {
             background-color: #393E46 !important;
-            color: #FFFFFF !important;  /* teks putih solid */
+            color: #FFFFFF !important;
             border-left: 5px solid #00ADB5 !important;
             border-radius: 6px !important;
             padding: 10px 15px !important;
@@ -167,7 +168,7 @@ st.markdown("""
             box-shadow: 0 0 12px #F44336;
         }
 
-        /* Pastikan teks di dalam box (p, li, span) putih */
+        /* Pastikan teks di dalam box putih */
         div.stAlert[data-baseweb="notification"] p,
         div.stAlert[data-baseweb="notification"] li,
         div.stAlert[data-baseweb="notification"] span {
