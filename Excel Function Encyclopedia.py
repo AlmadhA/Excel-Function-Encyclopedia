@@ -231,12 +231,15 @@ st.sidebar.markdown(
     <div style='margin-top:20px; margin-bottom:8px; font-weight:bold; color:#00ADB5; font-size:16px;'>
         Support Madha lewat link ini
     </div>
-    <a href='https://lynk.id/almadharp' target='_blank'>
-        <img src='assets/lynkid.png' width='160'/>
-    </a>
     """,
     unsafe_allow_html=True
 )
+st.sidebar.markdown(
+    "<a href='https://lynk.id/almadharp' target='_blank'>",
+    unsafe_allow_html=True
+)
+st.sidebar.image("assets/lynkid.png", width=80)
+st.sidebar.markdown("</a>", unsafe_allow_html=True)
 
 # ============================
 # BACKEND: Filtering
