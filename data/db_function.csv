@@ -1,442 +1,442 @@
 No,Nama Function,Kategori,Sintaks,Deskripsi,Contoh Kasus,Tingkat,Catatan
-1,CALL,Add-in and Automation,"=CALL(""library"",""function"",""type"",argument1,...)",Memanggil prosedur dari library eksternal (DLL) atau resource kode.,Mengakses fungsi API Windows dari Excel.,Advanced,"Jarang digunakan, perlu pemahaman programming dan akses ke DLL."
-2,EUROCONVERT,Add-in and Automation,"=EUROCONVERT(number,source,target,fullprecision,triangulationprecision)",Mengkonversi nilai mata uang Euro dan antar mata uang anggota Uni Eropa.,Mengubah 1000 Franc Perancis ke Euro.,Intermediate,Butuh add-in Euro Tool.
-3,REGISTER.ID,Add-in and Automation,"=REGISTER.ID(module_text,procedure,...)",Mengembalikan ID register dari library (DLL) yang sudah terdaftar.,Mengecek apakah sebuah fungsi eksternal sudah terdaftar.,Advanced,Sering digunakan bersama CALL.
-4,CUBEKPIMEMBER,Cube,"=CUBEKPIMEMBER(connection,KPI_name,KPI_property,[caption])",Mengambil indikator KPI dari cube (OLAP) dan menampilkan nama atau propertinya.,Menampilkan KPI Monthly Gross Profit dari cube OLAP.,Advanced,Digunakan dalam analisis bisnis berbasis OLAP.
-5,CUBEMEMBER,Cube,"=CUBEMEMBER(connection,member_expression,[caption])",Mengambil member atau tuple dari hierarki cube.,Menampilkan Sales Region = Asia dari cube.,Advanced,Membutuhkan koneksi ke OLAP server.
-6,CUBEMEMBERPROPERTY,Cube,"=CUBEMEMBERPROPERTY(connection,member_expression,property)",Mengambil nilai properti dari sebuah member dalam cube.,Mengambil Product Category Name dari member produk tertentu.,Advanced,Lebih spesifik dibanding CUBEMEMBER.
-7,CUBERANKEDMEMBER,Cube,"=CUBERANKEDMEMBER(connection,set_expression,rank,[caption])",Mengambil member berdasarkan ranking dalam sebuah set.,Menampilkan Top 1 Salesperson dalam cube.,Advanced,Berguna untuk ranking otomatis.
-8,CUBESET,Cube,"=CUBESET(connection,set_expression,[caption],[sort_order],[sort_by])",Mendefinisikan set anggota dari cube berdasarkan ekspresi tertentu.,Membuat set Top 10 Products by Sales.,Advanced,Membutuhkan ekspresi MDX.
-9,CUBESETCOUNT,Cube,=CUBESETCOUNT(set),Menghitung jumlah item dalam sebuah set cube.,Mengecek jumlah produk dalam kategori tertentu.,Advanced,Biasanya digunakan bersama CUBESET.
-10,CUBEVALUE,Cube,"=CUBEVALUE(connection,member_expression1,[member_expression2],...)","Mengambil nilai agregat dari cube (misalnya total penjualan, jumlah karyawan, dll).",Menampilkan total Sales Revenue tahun 2024 dari cube.,Advanced,"Fungsi cube paling umum, mirip SUM tapi untuk OLAP."
-11,DAVERAGE,Database,"=DAVERAGE(database, field, criteria)",Menghitung nilai rata-rata dari field tertentu pada database yang memenuhi kriteria.,"Rata-rata gaji karyawan di departemen ""HR"".",Intermediate,Berguna untuk analisis data dengan filter.
-12,DCOUNT,Database,"=DCOUNT(database, field, criteria)",Menghitung jumlah record dalam field yang berisi angka sesuai kriteria.,Menghitung jumlah transaksi dengan nominal > 1 juta.,Intermediate,Hanya menghitung angka.
-13,DCOUNTA,Database,"=DCOUNTA(database, field, criteria)",Menghitung jumlah record non-kosong dalam field sesuai kriteria.,Menghitung jumlah karyawan yang punya email (field tidak kosong).,Intermediate,"Menghitung semua tipe data, bukan hanya angka."
-14,DGET,Database,"=DGET(database, field, criteria)",Mengambil satu nilai dari database yang sesuai kriteria unik.,Menampilkan nomor telepon karyawan dengan ID tertentu.,Intermediate,Akan error jika lebih dari 1 record cocok.
-15,DMAX,Database,"=DMAX(database, field, criteria)",Mengambil nilai maksimum dari field sesuai kriteria.,Nilai penjualan tertinggi di cabang Surabaya.,Intermediate,Mirip MAX tapi berbasis database + kriteria.
-16,DMIN,Database,"=DMIN(database, field, criteria)",Mengambil nilai minimum dari field sesuai kriteria.,Gaji terendah di departemen Finance.,Intermediate,Mirip MIN tapi dengan kriteria.
-17,DPRODUCT,Database,"=DPRODUCT(database, field, criteria)",Menghitung hasil perkalian dari nilai dalam field sesuai kriteria.,Menghitung total produksi unit untuk kategori tertentu.,Advanced,"Jarang digunakan, hati-hati overflow jika angka besar."
-18,DSTDEV,Database,"=DSTDEV(database, field, criteria)",Mengestimasi standar deviasi sampel dari field sesuai kriteria.,Menghitung variasi gaji karyawan berdasarkan sampel.,Advanced,Untuk analisis statistik berbasis sampel.
-19,DSTDEVP,Database,"=DSTDEVP(database, field, criteria)",Menghitung standar deviasi populasi dari field sesuai kriteria.,Menghitung variasi gaji seluruh karyawan.,Advanced,"Populasi penuh, beda dengan DSTDEV."
-20,DSUM,Database,"=DSUM(database, field, criteria)",Menjumlahkan nilai dalam field sesuai kriteria.,Total penjualan cabang Bandung.,Intermediate,Mirip SUMIFS tapi khusus database.
-21,DVAR,Database,"=DVAR(database, field, criteria)",Mengestimasi variansi sampel dari field sesuai kriteria.,Variansi nilai ujian 50 siswa (sampel).,Advanced,Analisis statistik sampel.
-22,DVARP,Database,"=DVARP(database, field, criteria)",Menghitung variansi populasi dari field sesuai kriteria.,Variansi nilai ujian seluruh siswa.,Advanced,Analisis statistik populasi.
-23,DATE,Date and Time,"=DATE(year, month, day)",Menghasilkan serial number dari tanggal tertentu.,"Membuat tanggal dari input tahun, bulan, dan hari.",Basic,-
-24,DATEDIF,Date and Time,"=DATEDIF(start_date,end_date,unit)","Menghitung selisih hari, bulan, atau tahun antara dua tanggal.",Menghitung umur dari tanggal lahir.,Beginner,"Unit bisa ""Y"", ""M"", ""D""."
-25,DATEVALUE,Date and Time,=DATEVALUE(date_text),Mengubah tanggal berbentuk teks menjadi serial number.,"Konversi ""01-01-2024"" menjadi nilai tanggal Excel.",Basic,Format teks harus valid.
-26,DAY,Date and Time,=DAY(serial_number),Menghasilkan angka hari dari tanggal.,Dari 01/01/2024 menghasilkan 1.,Basic,-
-27,DAYS,Date and Time,"=DAYS(end_date,start_date)",Menghitung jumlah hari antara dua tanggal.,Jumlah hari antara 1 Jan dan 31 Jan.,Basic,-
-28,DAYS360,Date and Time,"=DAYS360(start_date,end_date,[method])",Menghitung jumlah hari berdasarkan tahun 360 hari.,Perhitungan bunga pinjaman.,Intermediate,-
-29,EDATE,Date and Time,"=EDATE(start_date,months)",Menghasilkan tanggal sejumlah bulan sebelum/sesudah tanggal awal.,Tanggal jatuh tempo 3 bulan setelah tanggal invoice.,Intermediate,-
-30,EOMONTH,Date and Time,"=EOMONTH(start_date,months)",Menghasilkan hari terakhir bulan sejumlah bulan sebelum/sesudah tanggal awal.,Menentukan akhir bulan untuk laporan keuangan.,Intermediate,-
-31,HOUR,Date and Time,=HOUR(serial_number),Menghasilkan jam dari nilai waktu.,Dari 12:45 menghasilkan 12.,Basic,-
-32,ISOWEEKNUM,Date and Time,=ISOWEEKNUM(date),Menghasilkan nomor minggu ISO dari sebuah tanggal.,Mengetahui minggu ke berapa dalam kalender ISO.,Intermediate,-
-33,MINUTE,Date and Time,=MINUTE(serial_number),Menghasilkan menit dari nilai waktu.,Dari 12:45 menghasilkan 45.,Basic,-
-34,MONTH,Date and Time,=MONTH(serial_number),Menghasilkan bulan dari tanggal.,Dari 01/02/2024 menghasilkan 2.,Basic,-
-35,NETWORKDAYS,Date and Time,"=NETWORKDAYS(start_date,end_date,[holidays])",Menghitung jumlah hari kerja.,Menghitung jumlah hari kerja Januari 2024 tanpa libur nasional.,Intermediate,Perhitungan default weekend = Sabtu-Minggu.
-36,NETWORKDAYS.INTL,Date and Time,"=NETWORKDAYS.INTL(start_date,end_date,weekend,[holidays])","Sama dengan NETWORKDAYS, tapi bisa atur hari libur mingguan.","Hitung kerja Senin–Sabtu, libur Jumat.",Advanced,-
-37,NOW,Date and Time,=NOW(),Menghasilkan tanggal dan waktu saat ini.,Tampilkan timestamp saat file dibuka.,Basic,"Dinamis, berubah setiap refresh."
-38,SECOND,Date and Time,=SECOND(serial_number),Menghasilkan detik dari nilai waktu.,Dari 12:45:30 menghasilkan 30.,Basic,-
-39,TIME,Date and Time,"=TIME(hour,minute,second)","Membuat serial number waktu dari jam, menit, detik.",Membuat waktu 12:30:00.,Basic,-
-40,TIMEVALUE,Date and Time,=TIMEVALUE(time_text),Mengubah waktu dalam teks ke serial number.,"""12:30 PM"" menjadi nilai waktu Excel.",Basic,Format teks harus valid.
-41,TODAY,Date and Time,=TODAY(),Menghasilkan tanggal hari ini.,Membuat laporan harian otomatis.,Basic,"Dinamis, berubah setiap hari."
-42,WEEKDAY,Date and Time,"=WEEKDAY(serial_number,[return_type])",Menghasilkan nomor hari dalam seminggu.,01/01/2024 menghasilkan 2 (Senin).,Basic,Return_type menentukan Senin/Minggu awal minggu.
-43,WEEKNUM,Date and Time,"=WEEKNUM(serial_number,[return_type])",Menghasilkan nomor minggu dalam setahun.,Menentukan minggu ke berapa 01/01/2024.,Intermediate,Return_type bisa ISO atau default.
-44,WORKDAY,Date and Time,"=WORKDAY(start_date,days,[holidays])",Menghasilkan tanggal kerja sebelum/sesudah sejumlah hari.,Hitung tanggal deadline 10 hari kerja setelah 1 Jan.,Intermediate,-
-45,WORKDAY.INTL,Date and Time,"=WORKDAY.INTL(start_date,days,weekend,[holidays])","Sama dengan WORKDAY, tapi fleksibel weekend.",Deadline 10 hari kerja dengan libur Jumat-Sabtu.,Advanced,-
-46,YEAR,Date and Time,=YEAR(serial_number),Menghasilkan tahun dari tanggal.,Dari 01/01/2024 menghasilkan 2024.,Basic,-
-47,YEARFRAC,Date and Time,"=YEARFRAC(start_date,end_date,[basis])",Menghitung proporsi tahun antara dua tanggal.,Usia anak antara tanggal lahir sampai hari ini dalam pecahan tahun.,Advanced,Basis menentukan metode hitung.
-48,BESSELI,Engineering,"=BESSELI(x, n)",Mengembalikan fungsi Bessel termodifikasi In(x).,"=BESSELI(1.5, 2) ? Menghasilkan nilai fungsi Bessel In(1.5) untuk orde 2",Advanced,Relevan untuk bidang teknik/fisika.
-49,BESSELJ,Engineering,"=BESSELJ(x, n)",Mengembalikan fungsi Bessel Jn(x).,"=BESSELJ(3, 1) ? Menghasilkan nilai fungsi Bessel J1(3)",Advanced,Banyak digunakan di teknik/gelombang.
-50,BESSELK,Engineering,"=BESSELK(x, n)",Mengembalikan fungsi Bessel termodifikasi Kn(x).,"=BESSELK(2.5, 1) ? Menghasilkan nilai fungsi Bessel K1(2.5)",Advanced,Umumnya untuk riset ilmiah/engineering.
-51,BESSELY,Engineering,"=BESSELY(x, n)",Mengembalikan fungsi Bessel Yn(x).,"=BESSELY(5, 2) ? Menghasilkan nilai fungsi Bessel Y2(5)",Advanced,Konteks sains/engineering.
-52,BIN2DEC,Engineering,=BIN2DEC(number),Mengubah bilangan biner menjadi bilangan desimal.,=BIN2DEC(1011) ? 11,Intermediate,Berguna di sistem digital.
-53,BIN2HEX,Engineering,"=BIN2HEX(number, [places])",Mengubah bilangan biner menjadi heksadesimal.,=BIN2HEX(1011) ? B,Intermediate,Praktis untuk konversi komputer.
-54,BIN2OCT,Engineering,"=BIN2OCT(number, [places])",Mengubah bilangan biner menjadi oktal.,=BIN2OCT(1011) ? 13,Intermediate,Relevan untuk sistem bilangan digital.
-55,BITAND,Engineering,"=BITAND(number1, number2)",Menghasilkan bitwise AND dari dua angka.,"=BITAND(7,3) ? 3",Intermediate,Operasi bit tingkat rendah.
-56,BITLSHIFT,Engineering,"=BITLSHIFT(number, shift_amount)",Menggeser angka biner ke kiri sejumlah bit.,"=BITLSHIFT(5,2) ? 20",Intermediate,Umum di pemrograman digital.
-57,BITOR,Engineering,"=BITOR(number1, number2)",Menghasilkan bitwise OR dari dua angka.,"=BITOR(7,3) ? 7",Intermediate,Dasar manipulasi bit.
-58,BITRSHIFT,Engineering,"=BITRSHIFT(number, shift_amount)",Menggeser angka biner ke kanan sejumlah bit.,"=BITRSHIFT(20,2) ? 5",Intermediate,Kebalikan BITLSHIFT.
-59,BITXOR,Engineering,"=BITXOR(number1, number2)",Menghasilkan bitwise XOR dari dua angka.,"=BITXOR(5,3) ? 6",Intermediate,Berguna untuk operasi logika digital.
-60,COMPLEX,Engineering,"=COMPLEX(real_num, i_num, [suffix])",Mengonversi bilangan real dan imajiner ke bentuk kompleks.,"=COMPLEX(3,4) ? 3+4i",Intermediate,Berguna dalam perhitungan matematis.
-61,CONVERT,Engineering,"=CONVERT(number, from_unit, to_unit)",Mengubah angka dari satu sistem satuan ke satuan lain.,"=CONVERT(10,""cm"",""in"") ? 3.937",Beginner,Sangat berguna di banyak bidang.
-62,DEC2BIN,Engineering,"=DEC2BIN(number, [places])",Mengubah angka desimal menjadi biner.,=DEC2BIN(11) ? 1011,Intermediate,Untuk sistem bilangan komputer.
-63,DEC2HEX,Engineering,"=DEC2HEX(number, [places])",Mengubah angka desimal menjadi heksadesimal.,=DEC2HEX(255) ? FF,Intermediate,Konversi umum di digital.
-64,DEC2OCT,Engineering,"=DEC2OCT(number, [places])",Mengubah angka desimal menjadi oktal.,=DEC2OCT(58) ? 72,Intermediate,Relevan di pemrograman/komputasi.
-65,DELTA,Engineering,"=DELTA(number1, [number2])","Menguji apakah dua nilai sama (kembalikan 1 jika sama, 0 jika beda).","=DELTA(5,5) ? 1",Beginner,Alternatif cepat untuk tes kesamaan.
-66,ERF,Engineering,"=ERF(lower_limit, [upper_limit])",Mengembalikan fungsi error (probabilitas distribusi normal).,=ERF(0.2) ? 0.2227,Advanced,Dipakai di statistik.
-67,ERF.PRECISE,Engineering,=ERF.PRECISE(x),Versi lebih tepat dari fungsi ERF.,=ERF.PRECISE(1) ? 0.8427,Advanced,Sama dengan ERF tetapi lebih akurat.
-68,ERFC,Engineering,=ERFC(x),Mengembalikan fungsi komplemen dari error function.,=ERFC(1) ? 0.1573,Advanced,Statistik/teknik.
-69,ERFC.PRECISE,Engineering,=ERFC.PRECISE(x),Versi lebih tepat dari fungsi ERFC.,=ERFC.PRECISE(1) ? 0.1573,Advanced,Digunakan untuk distribusi probabilitas.
-70,GESTEP,Engineering,"=GESTEP(number, [step])",Menguji apakah angka lebih besar atau sama dengan ambang batas.,"=GESTEP(5,4) ? 1",Beginner,Cocok untuk logika threshold.
-71,HEX2BIN,Engineering,"=HEX2BIN(number, [places])",Mengubah bilangan heksadesimal ke biner.,"=HEX2BIN(""F"") ? 1111",Intermediate,Untuk konversi data digital.
-72,HEX2DEC,Engineering,=HEX2DEC(number),Mengubah bilangan heksadesimal ke desimal.,"=HEX2DEC(""F"") ? 15",Intermediate,Umum di konversi komputer.
-73,HEX2OCT,Engineering,"=HEX2OCT(number, [places])",Mengonversi bilangan heksadesimal menjadi bilangan oktal,"=HEX2OCT(""F"") ? 17",Basic,Pastikan input valid (0–FFFFFFFFF)
-74,IMABS,Engineering,=IMABS(inumber),Mengembalikan nilai absolut (modulus) dari bilangan kompleks,"=IMABS(""3+4i"") ? 5",Intermediate,Berguna dalam analisis bilangan kompleks
-75,IMAGINARY,Engineering,=IMAGINARY(inumber),Mengembalikan koefisien imajiner dari bilangan kompleks,"=IMAGINARY(""3+4i"") ? 4",Basic,Pasangan dengan IMREAL
-76,IMARGUMENT,Engineering,=IMARGUMENT(inumber),Mengembalikan argumen sudut (theta) bilangan kompleks dalam radian,"=IMARGUMENT(""1+i"") ? 0.785398 (?/4)",Advanced,Untuk representasi polar
-77,IMCONJUGATE,Engineering,=IMCONJUGATE(inumber),Mengembalikan konjugat dari bilangan kompleks,"=IMCONJUGATE(""3+4i"") ? 3-4i",Intermediate,Penting dalam aljabar kompleks
-78,IMCOS,Engineering,=IMCOS(inumber),Mengembalikan nilai cosinus dari bilangan kompleks,1.54308063481524,Advanced,Hasil berupa bilangan kompleks
-79,IMCOSH,Engineering,=IMCOSH(inumber),Mengembalikan nilai cosinus hiperbolik dari bilangan kompleks,0.833730025131149+0.988897705762865i,Advanced,Sering digunakan dalam perhitungan teknik
-80,IMCOT,Engineering,=IMCOT(inumber),Mengembalikan nilai cotangen dari bilangan kompleks,0.217621561854403-0.868014142895925i,Advanced,Berhubungan dengan fungsi trigonometri kompleks
-81,IMCSC,Engineering,=IMCSC(inumber),Mengembalikan nilai cosecan dari bilangan kompleks,0.621518017170428-0.303931001628427i,Advanced,Hasil bisa berupa bilangan kompleks
-82,IMCSCH,Engineering,=IMCSCH(inumber),Mengembalikan nilai cosecan hiperbolik dari bilangan kompleks,0.303931001628426-0.621518017170429i,Advanced,Perhitungan lebih advance
-83,IMDIV,Engineering,"=IMDIV(inumber1, inumber2)",Mengembalikan hasil bagi dari dua bilangan kompleks,3.5+0.5i,Intermediate,Numerator tidak boleh kosong
-84,IMEXP,Engineering,=IMEXP(inumber),Mengembalikan eksponensial (e^x) dari bilangan kompleks,"=IMEXP(""0+PI()i"") ? -1",Advanced,Cocok untuk perhitungan teknik
-85,IMLN,Engineering,=IMLN(inumber),Mengembalikan logaritma natural dari bilangan kompleks,0.346573590279973+0.785398163397448i,Advanced,Output dalam bentuk kompleks
-86,IMLOG10,Engineering,=IMLOG10(inumber),Mengembalikan logaritma basis-10 dari bilangan kompleks,2,Advanced,Hasil dapat berupa kompleks
-87,IMLOG2,Engineering,=IMLOG2(inumber),Mengembalikan logaritma basis-2 dari bilangan kompleks,"=IMLOG2(""8"") ? 3",Advanced,
-88,IMPOWER,Engineering,"=IMPOWER(inumber, number)",Mengembalikan bilangan kompleks yang dipangkatkan dengan integer,2+11i,Advanced,Pangkat bisa negatif
-89,IMPRODUCT,Engineering,"=IMPRODUCT(inumber1, [inumber2], …)",Mengembalikan hasil perkalian bilangan kompleks,11+10i,Intermediate,Bisa lebih dari dua argumen
-90,IMREAL,Engineering,=IMREAL(inumber),Mengembalikan koefisien real dari bilangan kompleks,"=IMREAL(""3+4i"") ? 3",Basic,Pasangan dengan IMAGINARY
-91,IMSEC,Engineering,=IMSEC(inumber),Mengembalikan nilai secan dari bilangan kompleks,0.498337030555187+0.591083841721045i,Advanced,Bagian dari trig kompleks
-92,IMSECH,Engineering,=IMSECH(inumber),Mengembalikan nilai secan hiperbolik dari bilangan kompleks,0.498337030555187-0.591083841721045i,Advanced,Jarang dipakai di level dasar
-93,IMSIN,Engineering,=IMSIN(inumber),Mengembalikan nilai sinus dari bilangan kompleks,1.1752011936438i,Advanced,
-94,IMSINH,Engineering,=IMSINH(inumber),Mengembalikan nilai sinus hiperbolik dari bilangan kompleks,0.634963914784736+1.29845758141598i,Advanced,
-95,IMSQRT,Engineering,=IMSQRT(inumber),Mengembalikan akar kuadrat dari bilangan kompleks,"=IMSQRT(""-1"") ? i",Intermediate,Sangat berguna di aljabar kompleks
-96,IMSUB,Engineering,"=IMSUB(inumber1, inumber2)",Mengembalikan selisih antara dua bilangan kompleks,"=IMSUB(""3+4i"",""1+2i"") ? 2+2i",Basic,
-97,IMSUM,Engineering,"=IMSUM(inumber1, [inumber2], …)",Mengembalikan jumlah dari bilangan kompleks,4+6i,Basic,Bisa lebih dari dua argumen
-98,IMTAN,Engineering,=IMTAN(inumber),Mengembalikan nilai tangen dari bilangan kompleks,0.271752585319512+1.08392332733869i,Advanced,
-99,OCT2BIN,Engineering,"=OCT2BIN(number, [places])",Mengonversi bilangan oktal menjadi biner,"=OCT2BIN(""17"") ? 1111",Basic,Input valid: 0–777
-100,OCT2DEC,Engineering,=OCT2DEC(number),Mengonversi bilangan oktal menjadi desimal,"=OCT2DEC(""17"") ? 15",Basic,
-101,OCT2HEX,Engineering,"=OCT2HEX(number, [places])",Mengonversi bilangan oktal menjadi heksadesimal,"=OCT2HEX(""17"") ? F",Basic,
-102,ACCRINT,Financial,"=ACCRINT(issue, first_interest, settlement, rate, par, frequency, [basis], [calc_method])",Menghitung bunga yang terakumulasi untuk sekuritas dengan pembayaran bunga periodik,12.5,Intermediate,Basis default = 0 (NASD)
-103,ACCRINTM,Financial,"=ACCRINTM(issue, settlement, rate, par, [basis])",Menghitung bunga yang terakumulasi untuk sekuritas dengan pembayaran bunga pada saat jatuh tempo,45.83333333,Intermediate,Basis default = 0 (NASD)
-104,AMORDEGRC,Financial,"=AMORDEGRC(cost, date_purchased, first_period, salvage, period, rate, [basis])",Menghitung depresiasi tiap periode akuntansi menggunakan koefisien depresiasi,2400,Advanced,Mengikuti standar akuntansi Prancis
-105,AMORLINC,Financial,"=AMORLINC(cost, date_purchased, first_period, salvage, period, rate, [basis])",Menghitung depresiasi tiap periode akuntansi dengan metode linier,2000,Intermediate,
-106,COUPDAYBS,Financial,"=COUPDAYBS(settlement, maturity, frequency, [basis])",Menghitung jumlah hari dari awal periode kupon hingga tanggal penyelesaian,90,Intermediate,
-107,COUPDAYS,Financial,"=COUPDAYS(settlement, maturity, frequency, [basis])",Menghitung jumlah hari dalam periode kupon yang berisi tanggal penyelesaian,180,Intermediate,
-108,COUPDAYSNC,Financial,"=COUPDAYSNC(settlement, maturity, frequency, [basis])",Menghitung jumlah hari dari tanggal penyelesaian hingga kupon berikutnya,90,Intermediate,
-109,COUPNCD,Financial,"=COUPNCD(settlement, maturity, frequency, [basis])",Mengembalikan tanggal kupon berikutnya setelah tanggal penyelesaian,45839,Intermediate,
-110,COUPNUM,Financial,"=COUPNUM(settlement, maturity, frequency, [basis])",Menghitung jumlah kupon yang dibayarkan antara tanggal penyelesaian dan jatuh tempo,2,Intermediate,
-111,COUPPCD,Financial,"=COUPPCD(settlement, maturity, frequency, [basis])",Mengembalikan tanggal kupon sebelumnya sebelum tanggal penyelesaian,45658,Intermediate,
-112,CUMIPMT,Financial,"=CUMIPMT(rate, nper, pv, start_period, end_period, type)",Menghitung jumlah bunga yang dibayarkan antara dua periode,-5889.216434,Intermediate,
-113,CUMPRINC,Financial,"=CUMPRINC(rate, nper, pv, start_period, end_period, type)",Menghitung jumlah pokok yang dibayarkan antara dua periode,-450.1657094,Intermediate,
-114,DB,Financial,"=DB(cost, salvage, life, period, [month])",Menghitung depresiasi aset per periode menggunakan metode saldo menurun tetap,"£3,690.00",Intermediate,
-115,DDB,Financial,"=DDB(cost, salvage, life, period, [factor])",Menghitung depresiasi aset per periode menggunakan metode double declining balance,"£4,000.00",Intermediate,Factor default = 2
-116,DISC,Financial,"=DISC(settlement, maturity, pr, redemption, [basis])",Menghitung tingkat diskonto untuk sekuritas,0.066666667,Intermediate,
-117,DOLLARDE,Financial,"=DOLLARDE(fractional_dollar, fraction)",Mengubah harga dollar dari pecahan ke desimal,"=DOLLARDE(1.02,16) ? 1.125",Basic,
-118,DOLLARFR,Financial,"=DOLLARFR(decimal_dollar, fraction)",Mengubah harga dollar dari desimal ke pecahan,"=DOLLARFR(1.125,16) ? 1.02",Basic,
-119,DURATION,Financial,"=DURATION(settlement, maturity, coupon, yld, frequency, [basis])",Menghitung durasi tahunan sekuritas dengan pembayaran bunga periodik,0.737746847,Advanced,
-120,EFFECT,Financial,"=EFFECT(nominal_rate, npery)",Menghitung tingkat bunga efektif tahunan,"=EFFECT(0.06,2) ? 0.0609",Basic,
-121,FV,Financial,"=FV(rate, nper, pmt, [pv], [type])",Menghitung nilai masa depan investasi,£855.78,Basic,
-122,FVSCHEDULE,Financial,"=FVSCHEDULE(principal, schedule)",Menghitung nilai masa depan dari modal awal setelah menerapkan serangkaian tingkat bunga majemuk,1190.91,Intermediate,
-123,INTRATE,Financial,"=INTRATE(settlement, maturity, investment, redemption, [basis])",Menghitung tingkat bunga untuk sekuritas yang diinvestasikan penuh,0.266666667,Intermediate,
-124,IPMT,Financial,"=IPMT(rate, per, nper, pv, [fv], [type])",Menghitung pembayaran bunga untuk investasi per periode,-£50.00,Basic,
-125,IRR,Financial,"=IRR(values, [guess])",Menghitung internal rate of return untuk serangkaian arus kas,"=IRR({-1000,300,400,500}) ? 0.138",Intermediate,
-126,ISPMT,Financial,"=ISPMT(rate, per, nper, pv)",Menghitung bunga dibayarkan selama periode tertentu,-40,Intermediate,
-127,MDURATION,Financial,"=MDURATION(settlement, maturity, coupon, yld, frequency, [basis])",Menghitung Macauley modified duration untuk sekuritas dengan nilai nominal $100,0.716259075,Advanced,
-128,MIRR,Financial,"=MIRR(values, finance_rate, reinvest_rate)",Menghitung internal rate of return dengan arus kas positif dan negatif dibiayai dengan tingkat berbeda,8%,Advanced,
-129,NOMINAL,Financial,"=NOMINAL(effect_rate, npery)",Menghitung tingkat bunga nominal tahunan,0.059126028,Basic,
-130,NPER,Financial,"=NPER(rate, pmt, pv, [fv], [type])",Menghitung jumlah periode untuk suatu investasi,#NUM!,Basic,
-131,NPV,Financial,"=NPV(rate, value1, [value2], ...)",Menghitung net present value dari arus kas periodik,"£1,080.44",Intermediate,
-132,ODDFPRICE,Financial,"=ODDFPRICE(settlement, maturity, rate, yld, redemption, frequency, [basis])",Menghitung harga per $100 face value untuk sekuritas dengan periode pertama ganjil,"=ODDFPRICE(""01-04-2025"",""01-01-2026"",0.05,0.06,100,2)",Intermediate,
-133,ODDFYIELD,Financial,"=ODDFYIELD(settlement, maturity, rate, pr, redemption, frequency, [basis])",Menghitung yield sekuritas dengan periode pertama ganjil,"=ODDFYIELD(""01-04-2025"",""01-01-2026"",0.05,95,100,2)",Intermediate,
-134,ODDLPRICE,Financial,"=ODDLPRICE(settlement, maturity, rate, yld, redemption, frequency, [basis])",Menghitung harga per $100 face value untuk sekuritas dengan periode terakhir ganjil,"=ODDLPRICE(""01-04-2025"",""01-01-2026"",0.05,0.06,100,2)",Intermediate,
-135,ODDLYIELD,Financial,"=ODDLYIELD(settlement, maturity, rate, pr, redemption, frequency, [basis])",Menghitung yield sekuritas dengan periode terakhir ganjil,"=ODDLYIELD(""01-04-2025"",""01-01-2026"",0.05,95,100,2)",Intermediate,
-136,PDURATION,Financial,"=PDURATION(rate, pv, fv)",Menghitung jumlah periode yang diperlukan investasi untuk mencapai nilai tertentu,14.20669908,Intermediate,
-137,PMT,Financial,"=PMT(rate, nper, pv, [fv], [type])",Menghitung pembayaran periodik untuk anuitas,"-£1,584.85",Basic,Negatif = pembayaran keluar
-138,PPMT,Financial,"=PPMT(rate, per, nper, pv, [fv], [type])",Menghitung pembayaran pokok pada periode tertentu,-£84.85,Intermediate,
-139,PRICE,Financial,"=PRICE(settlement, maturity, rate, yld, redemption, frequency, [basis])",Menghitung harga per $100 face value sekuritas dengan bunga periodik,99.26793583,Intermediate,
-140,PRICEDISC,Financial,"=PRICEDISC(settlement, maturity, discount, redemption, [basis])",Menghitung harga per $100 face value sekuritas diskonto,96.25,Intermediate,
-141,PRICEMAT,Financial,"=PRICEMAT(settlement, maturity, issue, rate, yld, [basis])",Menghitung harga per $100 face value sekuritas dengan bunga dibayarkan saat jatuh tempo,99.2284689,Intermediate,
-142,PV,Financial,"=PV(rate, nper, pmt, [fv], [type])",Menghitung present value investasi,"£18,929.29",Basic,
-143,RATE,Financial,"=RATE(nper, pmt, pv, [fv], [type], [guess])",Menghitung tingkat bunga per periode anuitas,0%,Intermediate,
-144,RECEIVED,Financial,"=RECEIVED(settlement, maturity, investment, discount, [basis])",Menghitung jumlah diterima saat jatuh tempo untuk sekuritas,1038.961039,Intermediate,
-145,RRI,Financial,"=RRI(nper, pv, fv)",Menghitung tingkat bunga ekuivalen untuk pertumbuhan investasi,0.148698355,Basic,
-146,SLN,Financial,"=SLN(cost, salvage, life)",Menghitung depresiasi metode garis lurus untuk satu periode,"£1,800.00",Basic,
-147,SYD,Financial,"=SYD(cost, salvage, life, period)",Menghitung depresiasi metode sum-of-years digits untuk periode tertentu,"£3,000.00",Intermediate,
-148,TBILLEQ,Financial,"=TBILLEQ(settlement, maturity, discount)",Menghitung bond-equivalent yield Treasury bill,0.051343368,Intermediate,
-149,TBILLPRICE,Financial,"=TBILLPRICE(settlement, maturity, discount)",Menghitung harga per $100 face value Treasury bill,98.73611111,Intermediate,
-150,TBILLYIELD,Financial,"=TBILLYIELD(settlement, maturity, pr)",Menghitung yield Treasury bill,0.20821284,Intermediate,
-151,VDB,Financial,"=VDB(cost, salvage, life, start_period, end_period, [factor], [no_switch])",Menghitung depresiasi aset untuk periode tertentu menggunakan metode declining balance,"£1,200.00",Intermediate,
-152,XIRR,Financial,"=XIRR(values, dates, [guess])",Menghitung internal rate of return untuk arus kas yang tidak periodik,0.409077853,Advanced,
-153,XNPV,Financial,"=XNPV(rate, values, dates)",Menghitung net present value untuk arus kas yang tidak periodik,#VALUE!,Advanced,
-154,YIELD,Financial,"=YIELD(settlement, maturity, rate, pr, redemption, frequency, [basis])",Menghitung yield sekuritas dengan bunga periodik,0.121489143,Intermediate,
-155,YIELDDISC,Financial,"=YIELDDISC(settlement, maturity, pr, redemption, [basis])","Menghitung annual yield sekuritas diskonto, misal Treasury bill",0.210526316,Intermediate,
-156,YIELDMAT,Financial,"=YIELDMAT(settlement, maturity, issue, rate, [basis])",Menghitung annual yield sekuritas yang membayar bunga saat jatuh tempo,"=YIELDMAT(""01-04-2025"",""01-01-2026"",""01-01-2025"",0.05)",Intermediate,
-157,CELL,Informational,"=CELL(info_type, [reference])","Mengembalikan informasi tentang format, lokasi, atau isi sel. Tidak tersedia di Excel untuk web",$A$1,Basic,
-158,ERROR.TYPE,Informational,=ERROR.TYPE(error_val),Mengembalikan angka yang sesuai dengan tipe error,2,Basic,
-159,INFO,Informational,=INFO(type_text),Mengembalikan info lingkungan operasional saat ini. Tidak tersedia di Excel untuk web,pcdos,Basic,
-160,ISBLANK,Informational,=ISBLANK(value),Mengembalikan TRUE jika sel kosong,FALSE,Basic,
-161,ISERR,Informational,=ISERR(value),Mengembalikan TRUE jika sel berisi error kecuali #N/A,FALSE,Basic,
-162,ISERROR,Informational,=ISERROR(value),Mengembalikan TRUE jika sel berisi error apapun,FALSE,Basic,
-163,ISEVEN,Informational,=ISEVEN(number),Mengembalikan TRUE jika angka genap,TRUE,Basic,
-164,ISFORMULA,Informational,=ISFORMULA(reference),Mengembalikan TRUE jika sel berisi formula,FALSE,Basic,
-165,ISLOGICAL,Informational,=ISLOGICAL(value),Mengembalikan TRUE jika sel berisi nilai logika,TRUE,Basic,
-166,ISNA,Informational,=ISNA(value),Mengembalikan TRUE jika sel berisi error #N/A,FALSE,Basic,
-167,ISNONTEXT,Informational,=ISNONTEXT(value),Mengembalikan TRUE jika sel bukan teks,FALSE,Basic,
-168,ISNUMBER,Informational,=ISNUMBER(value),Mengembalikan TRUE jika sel berisi angka,FALSE,Basic,
-169,ISODD,Informational,=ISODD(number),Mengembalikan TRUE jika angka ganjil,TRUE,Basic,
-170,ISREF,Informational,=ISREF(value),Mengembalikan TRUE jika sel berisi referensi,TRUE,Basic,
-171,ISTEXT,Informational,=ISTEXT(value),Mengembalikan TRUE jika sel berisi teks,TRUE,Basic,
-172,N,Informational,=N(value),Mengubah nilai menjadi angka,=N(TRUE) ? 1,Basic,
-173,NA,Informational,=NA(),Mengembalikan error #N/A,#N/A,Basic,
-174,SHEET,Informational,=SHEET([reference]),Mengembalikan nomor sheet dari referensi,1,Basic,
-175,SHEETS,Informational,=SHEETS([reference]),Mengembalikan jumlah sheet dalam referensi,1,Basic,
-176,TYPE,Informational,=TYPE(value),Mengembalikan angka yang menunjukkan tipe data,2,Basic,
-177,AND,Logical,"=AND(logical1, [logical2], …)",Mengembalikan TRUE jika semua argumen TRUE,FALSE,Basic,
-178,FALSE,Logical,=FALSE(),Mengembalikan nilai logika FALSE,FALSE,Basic,
-179,IF,Logical,"=IF(logical_test, value_if_true, value_if_false)",Menentukan pengujian logika,Dewasa,Basic,
-180,IFERROR,Logical,"=IFERROR(value, value_if_error)",Mengembalikan nilai tertentu jika formula error,Error,Basic,
-181,IFNA,Logical,"=IFNA(value, value_if_na)",Mengembalikan nilai tertentu jika hasil #N/A,CUBEMEMBER,Basic,
-182,IFS,Logical,"=IFS(condition1, value1, [condition2, value2], …)",Mengecek satu atau lebih kondisi dan mengembalikan nilai sesuai kondisi TRUE pertama,A,Basic,
-183,NOT,Logical,=NOT(logical),Membalik logika argumen,=NOT(TRUE) ? FALSE,Basic,
-184,OR,Logical,"=OR(logical1, [logical2], …)",Mengembalikan TRUE jika salah satu argumen TRUE,TRUE,Basic,
-185,SWITCH,Logical,"=SWITCH(expression, value1, result1, [value2, result2], …, [default])",Mengevaluasi ekspresi terhadap daftar nilai dan mengembalikan hasil dari nilai yang cocok pertama,Lainnya,Basic,
-186,TRUE,Logical,=TRUE(),Mengembalikan nilai logika TRUE,TRUE,Basic,
-187,XOR,Logical,"=XOR(logical1, [logical2], …)",Mengembalikan logika exclusive OR dari semua argumen,TRUE,Basic,
-188,ADDRESS,Lookup and Reference,"=ADDRESS(row_num, column_num, [abs_num], [a1], [sheet_text])",Mengembalikan referensi sebagai teks ke sebuah sel,"=ADDRESS(1,1) ? $A$1",Basic,
-189,AREAS,Lookup and Reference,=AREAS(reference),Mengembalikan jumlah area dalam referensi,"=AREAS(A1:B2, C1:D2) ? 2",Basic,
-190,CHOOSE,Lookup and Reference,"=CHOOSE(index_num, value1, [value2], …)",Memilih nilai dari daftar,"=CHOOSE(2,""Merah"",""Biru"",""Hijau"") ? ""Biru""",Basic,
-191,COLUMN,Lookup and Reference,=COLUMN([reference]),Mengembalikan nomor kolom,=COLUMN(B1) ? 2,Basic,
-192,COLUMNS,Lookup and Reference,=COLUMNS(array),Mengembalikan jumlah kolom dalam referensi,=COLUMNS(A1:C1) ? 3,Basic,
-193,FILTER,Lookup and Reference,"=FILTER(array, include, [if_empty])",Memfilter data berdasarkan kriteria,"=FILTER(A1:A10,B1:B10=""Yes"")",Intermediate,
-194,FORMULATEXT,Lookup and Reference,=FORMULATEXT(reference),Mengembalikan formula dalam sel sebagai teks,#N/A,Basic,
-195,GETPIVOTDATA,Lookup and Reference,"=GETPIVOTDATA(data_field, pivot_table, [field1, item1], …)",Mengambil data dari PivotTable,#REF!,Intermediate,
-196,HLOOKUP,Lookup and Reference,"=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])",Mencari di baris pertama dan mengembalikan nilai,#N/A,Basic,
-197,HYPERLINK,Lookup and Reference,"=HYPERLINK(link_location, [friendly_name])",Membuat shortcut atau link,Klik disini,Basic,
-198,INDEX,Lookup and Reference,"=INDEX(array, row_num, [column_num])",Mengambil nilai berdasarkan indeks,Add-in and Automation,Basic,
-199,INDIRECT,Lookup and Reference,"=INDIRECT(ref_text, [a1])",Mengembalikan referensi berdasarkan teks,No,Basic,
-200,LOOKUP,Lookup and Reference,"=LOOKUP(lookup_value, lookup_vector, [result_vector])",Mencari nilai dalam vektor,CUBEMEMBER,Basic,
-201,MATCH,Lookup and Reference,"=MATCH(lookup_value, lookup_array, [match_type])",Mencari posisi item,"=MATCH(25,A1:A10,0) ? 3",Basic,
-202,OFFSET,Lookup and Reference,"=OFFSET(reference, rows, cols, [height], [width])",Mengembalikan referensi offset,"=EUROCONVERT(number,source,target,fullprecision,triangulationprecision)",Intermediate,
-203,ROW,Lookup and Reference,=ROW([reference]),Mengembalikan nomor baris,=ROW(B3) ? 3,Basic,
-204,ROWS,Lookup and Reference,=ROWS(array),Mengembalikan jumlah baris,=ROWS(A1:A10) ? 10,Basic,
-205,RTD,Lookup and Reference,"=RTD(progID, server, topic1, [topic2], …)",Mengambil data real-time dari program COM,#N/A,Advanced,
-206,SORT,Lookup and Reference,"=SORT(array, [sort_index], [sort_order], [by_col])",Mengurutkan isi range atau array,"=SORT(A1:A10,1,1)",Intermediate,
-207,SORTBY,Lookup and Reference,"=SORTBY(array, by_array1, [sort_order1], …)",Mengurutkan range berdasarkan array lain,#NAME?,Intermediate,
-208,TRANSPOSE,Lookup and Reference,=TRANSPOSE(array),Mengembalikan transpose array,#VALUE!,Basic,
-209,UNIQUE,Lookup and Reference,=UNIQUE(array),Mengembalikan nilai unik dari range,#NAME?,Basic,
-210,VLOOKUP,Lookup and Reference,"=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])",Mencari di kolom pertama dan mengembalikan nilai,#N/A,Basic,
-211,XLOOKUP,Lookup and Reference,"=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])",Mencari item dan mengembalikan nilai sesuai match pertama,#NAME?,Intermediate,
-212,XMATCH,Lookup and Reference,"=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])",Mengembalikan posisi relatif item dalam array,#NAME?,Intermediate,
-213,ABS,Math and Trigonometry,=ABS(number),Mengembalikan nilai absolut,=ABS(-5) ? 5,Basic,
-214,ACOS,Math and Trigonometry,=ACOS(number),Mengembalikan arccosine dari angka,=ACOS(0.5) ? 1.0472 (radian),Basic,
-215,ACOSH,Math and Trigonometry,=ACOSH(number),Mengembalikan inverse hyperbolic cosine,=ACOSH(2) ? 1.31696,Intermediate,
-216,ACOT,Math and Trigonometry,=ACOT(number),Mengembalikan arccotangent dari angka,=ACOT(1) ? 0.7854 (radian),Intermediate,
-217,ACOTH,Math and Trigonometry,=ACOTH(number),Mengembalikan hyperbolic arccotangent,=ACOTH(2) ? 0.5493,Advanced,
-218,AGGREGATE,Math and Trigonometry,"=AGGREGATE(function_num, options, array, [k])",Mengembalikan agregat dari list atau database,45,Intermediate,
-219,ARABIC,Math and Trigonometry,=ARABIC(text),Mengubah angka Romawi menjadi angka Arabic,"=ARABIC(""XIV"") ? 14",Basic,
-220,ASIN,Math and Trigonometry,=ASIN(number),Mengembalikan arcsine dari angka,=ASIN(0.5) ? 0.5236 (radian),Basic,
-221,ASINH,Math and Trigonometry,=ASINH(number),Mengembalikan inverse hyperbolic sine,=ASINH(1) ? 0.8814,Intermediate,
-222,ATAN,Math and Trigonometry,=ATAN(number),Mengembalikan arctangent dari angka,=ATAN(1) ? 0.7854 (radian),Basic,
-223,ATAN2,Math and Trigonometry,"=ATAN2(x_num, y_num)",Mengembalikan arctangent dari koordinat x dan y,"=ATAN2(1,1) ? 0.7854",Intermediate,
-224,ATANH,Math and Trigonometry,=ATANH(number),Mengembalikan inverse hyperbolic tangent,=ATANH(0.5) ? 0.5493,Intermediate,
-225,BASE,Math and Trigonometry,"=BASE(number, radix, [min_length])",Mengubah angka menjadi teks dalam basis tertentu,"=BASE(10,2) ? ""1010""",Basic,
-226,CEILING.MATH,Math and Trigonometry,"=CEILING.MATH(number, [significance], [mode])",Membulatkan ke atas,"=CEILING.MATH(4.3,1) ? 5",Basic,
-227,CEILING.PRECISE,Math and Trigonometry,"=CEILING.PRECISE(number, [significance])","Membulatkan ke atas, independen tanda","=CEILING.PRECISE(-4.3,1) ? -4",Basic,
-228,COMBIN,Math and Trigonometry,"=COMBIN(number, number_chosen)",Menghitung jumlah kombinasi,"=COMBIN(5,2) ? 10",Basic,
-229,COMBINA,Math and Trigonometry,"=COMBINA(number, number_chosen)",Menghitung kombinasi dengan pengulangan,"=COMBINA(3,2) ? 6",Basic,
-230,COS,Math and Trigonometry,=COS(number),Mengembalikan cosinus dari angka,=COS(PI()/3) ? 0.5,Basic,
-231,COSH,Math and Trigonometry,=COSH(number),Mengembalikan hyperbolic cosine,=COSH(1) ? 1.5431,Intermediate,
-232,COT,Math and Trigonometry,=COT(number),Mengembalikan cotangent dari sudut,=COT(PI()/4) ? 1,Intermediate,
-233,COTH,Math and Trigonometry,=COTH(number),Mengembalikan hyperbolic cotangent,=COTH(1) ? 1.3130,Advanced,
-234,CSC,Math and Trigonometry,=CSC(number),Mengembalikan cosecant dari sudut,=CSC(PI()/2) ? 1,Advanced,
-235,CSCH,Math and Trigonometry,=CSCH(number),Mengembalikan hyperbolic cosecant,=CSCH(1) ? 0.8509,Advanced,
-236,DECIMAL,Math and Trigonometry,"=DECIMAL(text, radix)",Mengubah teks angka basis tertentu ke desimal,"=DECIMAL(""1010"",2) ? 10",Basic,
-237,DEGREES,Math and Trigonometry,=DEGREES(radians),Mengubah radian ke derajat,=DEGREES(PI()) ? 180,Basic,
-238,EVEN,Math and Trigonometry,=EVEN(number),Membulatkan angka ke bilangan genap terdekat,=EVEN(3) ? 4,Basic,
-239,EXP,Math and Trigonometry,=EXP(number),Mengembalikan e dipangkatkan angka,=EXP(1) ? 2.71828,Basic,
-240,FACT,Math and Trigonometry,=FACT(number),Mengembalikan faktorial angka,=FACT(5) ? 120,Basic,
-241,FACTDOUBLE,Math and Trigonometry,=FACTDOUBLE(number),Mengembalikan double faktorial,=FACTDOUBLE(6) ? 48,Advanced,
-242,FLOOR.MATH,Math and Trigonometry,"=FLOOR.MATH(number, [significance], [mode])",Membulatkan ke bawah,"=FLOOR.MATH(4.7,1) ? 4",Basic,
-243,FLOOR.PRECISE,Math and Trigonometry,"=FLOOR.PRECISE(number, [significance])","Membulatkan ke bawah, independen tanda","=FLOOR.PRECISE(-4.7,1) ? -5",Basic,
-244,GCD,Math and Trigonometry,"=GCD(number1, [number2], …)",Mengembalikan pembagi terbesar,"=GCD(12,18) ? 6",Basic,
-245,INT,Math and Trigonometry,=INT(number),Membulatkan ke bawah ke integer terdekat,=INT(4.7) ? 4,Basic,
-246,ISO.CEILING,Math and Trigonometry,"=ISO.CEILING(number, significance)",Membulatkan ke atas ke kelipatan tertentu,"=ISO.CEILING(5.5,2) ? 6",Intermediate,
-247,LCM,Math and Trigonometry,"=LCM(number1, [number2], …)",Mengembalikan kelipatan terkecil,"=LCM(12,18) ? 36",Basic,
-248,LET,Math and Trigonometry,"=LET(name1, value1, calculation)",Menyimpan nilai sementara dalam formula,"=LET(x,5,x+10) ? 15",Advanced,
-249,LN,Math and Trigonometry,=LN(number),Mengembalikan logaritma natural,=LN(2.71828) ? 1,Basic,
-250,LOG,Math and Trigonometry,"=LOG(number, [base])",Mengembalikan logaritma basis tertentu,"=LOG(100,10) ? 2",Basic,
-251,LOG10,Math and Trigonometry,=LOG10(number),Mengembalikan logaritma basis 10,=LOG10(100) ? 2,Basic,
-252,MDETERM,Math and Trigonometry,=MDETERM(array),Mengembalikan determinan matriks,#VALUE!,Advanced,
-253,MINVERSE,Math and Trigonometry,=MINVERSE(array),Mengembalikan invers matriks,#VALUE!,Advanced,
-254,MMULT,Math and Trigonometry,"=MMULT(array1,array2)",Mengembalikan hasil perkalian matriks,#VALUE!,Advanced,
-255,MOD,Math and Trigonometry,"=MOD(number, divisor)",Mengembalikan sisa bagi,"=MOD(10,3) ? 1",Basic,
-256,MROUND,Math and Trigonometry,"=MROUND(number, multiple)",Membulatkan ke kelipatan tertentu,"=MROUND(7,3) ? 6",Basic,
-257,MULTINOMIAL,Math and Trigonometry,"=MULTINOMIAL(number1, [number2], …)",Mengembalikan multinomial dari angka,"=MULTINOMIAL(2,3) ? 10",Advanced,
-258,MUNIT,Math and Trigonometry,=MUNIT(dimension),Mengembalikan matriks identitas,=MUNIT(3) ? 3x3 identity matrix,Advanced,
-259,ODD,Math and Trigonometry,=ODD(number),Membulatkan angka ke bilangan ganjil terdekat,=ODD(3) ? 3,Basic,
-260,PI,Math and Trigonometry,=PI(),Mengembalikan nilai ?,=PI() ? 3.14159265359,Basic,
-261,POWER,Math and Trigonometry,"=POWER(number, power)",Mengembalikan angka dipangkatkan,"=POWER(2,3) ? 8",Basic,
-262,PRODUCT,Math and Trigonometry,"=PRODUCT(number1, [number2], …)",Mengalikan semua argumen,"=PRODUCT(2,3,4) ? 24",Basic,
-263,QUOTIENT,Math and Trigonometry,"=QUOTIENT(numerator, denominator)",Mengembalikan bagian integer dari pembagian,"=QUOTIENT(10,3) ? 3",Basic,
-264,RADIANS,Math and Trigonometry,=RADIANS(degrees),Mengonversi derajat ke radian,=RADIANS(180) ? 3.14159265,Basic,
-265,RAND,Math and Trigonometry,=RAND(),Mengembalikan angka acak antara 0 dan 1,=RAND() ? 0.3745,Basic,
-266,RANDARRAY,Math and Trigonometry,"=RANDARRAY([rows],[columns],[min],[max],[whole_number])",Mengembalikan array angka acak,#NAME?,Advanced,
-267,RANDBETWEEN,Math and Trigonometry,"=RANDBETWEEN(bottom,top)",Mengembalikan angka acak antara nilai yang ditentukan,"=RANDBETWEEN(1,10) ? 7",Basic,
-268,ROMAN,Math and Trigonometry,"=ROMAN(number,[form])",Mengonversi angka arab ke romawi,=ROMAN(2025) ? MMXXV,Basic,
-269,ROUND,Math and Trigonometry,"=ROUND(number,num_digits)",Membulatkan angka ke digit tertentu,"=ROUND(3.14159,2) ? 3.14",Basic,
-270,ROUNDDOWN,Math and Trigonometry,"=ROUNDDOWN(number,num_digits)",Membulatkan angka ke bawah,"=ROUNDDOWN(3.14159,2) ? 3.14",Basic,
-271,ROUNDUP,Math and Trigonometry,"=ROUNDUP(number,num_digits)",Membulatkan angka ke atas,"=ROUNDUP(3.14159,2) ? 3.15",Basic,
-272,SEC,Math and Trigonometry,=SEC(number),Mengembalikan secan dari sudut,=SEC(PI()/3) ? 2,Basic,
-273,SECH,Math and Trigonometry,=SECH(number),Mengembalikan secan hiperbolik dari sudut,=SECH(0) ? 1,Basic,
-274,SEQUENCE,Math and Trigonometry,"=SEQUENCE(rows,[columns],[start],[step])",Menghasilkan daftar angka berurutan,"=SEQUENCE(4) ? 1,2,3,4",Advanced,
-275,SERIESSUM,Math and Trigonometry,"=SERIESSUM(x,n,m,coefficients)",Mengembalikan jumlah deret pangkat,17,Advanced,
-276,SIGN,Math and Trigonometry,=SIGN(number),Mengembalikan tanda angka,=SIGN(-5) ? -1,Basic,
-277,SIN,Math and Trigonometry,=SIN(number),Mengembalikan sinus dari sudut,=SIN(PI()/2) ? 1,Basic,
-278,SINH,Math and Trigonometry,=SINH(number),Mengembalikan sinus hiperbolik dari angka,=SINH(1) ? 1.175201,Basic,
-279,SQRT,Math and Trigonometry,=SQRT(number),Mengembalikan akar kuadrat positif,=SQRT(16) ? 4,Basic,
-280,SQRTPI,Math and Trigonometry,=SQRTPI(number),Mengembalikan akar kuadrat dari (angka*?),=SQRTPI(2) ? 2.506628,Basic,
-281,SUBTOTAL,Math and Trigonometry,"=SUBTOTAL(function_num,ref1,[ref2],...)",Mengembalikan subtotal dari daftar atau database,"=SUBTOTAL(9,A1:A10) ? jumlah",Intermediate,
-282,SUM,Math and Trigonometry,"=SUM(number1,[number2],...)",Menjumlahkan semua argumen,"=SUM(1,2,3) ? 6",Basic,
-283,SUMIF,Math and Trigonometry,"=SUMIF(range,criteria,[sum_range])",Menjumlahkan sel yang memenuhi kriteria,30,Basic,
-284,SUMIFS,Math and Trigonometry,"=SUMIFS(sum_range,criteria_range1,criteria1,...)",Menjumlahkan sel berdasarkan beberapa kriteria,0,Intermediate,
-285,SUMPRODUCT,Math and Trigonometry,"=SUMPRODUCT(array1,[array2],...)",Mengembalikan jumlah hasil perkalian komponen array,0,Intermediate,
-286,SUMSQ,Math and Trigonometry,"=SUMSQ(number1,[number2],...)",Menjumlahkan kuadrat argumen,"=SUMSQ(2,3) ? 13",Basic,
-287,SUMX2MY2,Math and Trigonometry,"=SUMX2MY2(array_x,array_y)",Menjumlahkan selisih kuadrat array,"=SUMX2MY2({1,2},{3,4}) ? 5",Advanced,
-288,SUMX2PY2,Math and Trigonometry,"=SUMX2PY2(array_x,array_y)",Menjumlahkan jumlah kuadrat array,"=SUMX2PY2({1,2},{3,4}) ? 30",Advanced,
-289,SUMXMY2,Math and Trigonometry,"=SUMXMY2(array_x,array_y)",Menjumlahkan kuadrat selisih array,"=SUMXMY2({1,2},{3,4}) ? 5",Advanced,
-290,TAN,Math and Trigonometry,=TAN(number),Mengembalikan tangen sudut,=TAN(PI()/4) ? 1,Basic,
-291,TANH,Math and Trigonometry,=TANH(number),Mengembalikan tangen hiperbolik angka,=TANH(1) ? 0.761594,Basic,
-292,TRUNC,Math and Trigonometry,"=TRUNC(number,[num_digits])",Memotong angka menjadi integer,=TRUNC(4.7) ? 4,Basic,
-293,AVEDEV,Statistical,"=AVEDEV(number1,[number2],...)",Mengembalikan rata-rata deviasi absolut dari titik data terhadap rata-ratanya,"=AVEDEV(1,2,3,4) ? 1",Basic,
-294,AVERAGE,Statistical,"=AVERAGE(number1,[number2],...)",Mengembalikan rata-rata dari argumen,"=AVERAGE(1,2,3,4) ? 2.5",Basic,
-295,AVERAGEA,Statistical,"=AVERAGEA(value1,[value2],...)","Mengembalikan rata-rata dari argumen termasuk angka, teks, dan logika","=AVERAGEA(1,TRUE, ""3"") ? 1.333",Basic,
-296,AVERAGEIF,Statistical,"=AVERAGEIF(range,criteria,[average_range])",Mengembalikan rata-rata sel yang memenuhi kriteria,7.5,Basic,
-297,AVERAGEIFS,Statistical,"=AVERAGEIFS(average_range,criteria_range1,criteria1,...)",Mengembalikan rata-rata sel yang memenuhi beberapa kriteria,#DIV/0!,Intermediate,
-298,BETA.DIST,Statistical,"=BETA.DIST(x,alpha,beta,cumulative,[A],[B])",Mengembalikan fungsi distribusi beta kumulatif,"=BETA.DIST(0.5,2,2,TRUE) ? 0.5",Advanced,
-299,BETA.INV,Statistical,"=BETA.INV(probability,alpha,beta,[A],[B])",Mengembalikan invers dari fungsi distribusi beta kumulatif,"=BETA.INV(0.5,2,2) ? 0.5",Advanced,
-300,BINOM.DIST,Statistical,"=BINOM.DIST(number_trials,probability_s,trials,cumulative)",Mengembalikan probabilitas binomial,"=BINOM.DIST(2,0.5,3,FALSE) ? 0.375",Advanced,
-301,BINOM.DIST.RANGE,Statistical,"=BINOM.DIST.RANGE(trials,probability_s,s,t)",Mengembalikan probabilitas hasil percobaan binomial,"=BINOM.DIST.RANGE(3,0.5,2,3) ? 0.5",Advanced,
-302,BINOM.INV,Statistical,"=BINOM.INV(trials,probability_s,alpha)",Mengembalikan nilai terkecil dengan distribusi binomial kumulatif ? ?,"=BINOM.INV(3,0.5,0.5) ? 1",Advanced,
-303,CHISQ.DIST,Statistical,"=CHISQ.DIST(x,deg_freedom,cumulative)",Mengembalikan distribusi chi-kuadrat kumulatif,"=CHISQ.DIST(2,1,TRUE) ? 0.8427",Advanced,
-304,CHISQ.DIST.RT,Statistical,"=CHISQ.DIST.RT(x,deg_freedom)",Mengembalikan probabilitas satu sisi distribusi chi-kuadrat,"=CHISQ.DIST.RT(2,1) ? 0.1573",Advanced,
-305,CHISQ.INV,Statistical,"=CHISQ.INV(probability,deg_freedom)",Mengembalikan invers distribusi chi-kuadrat kumulatif,"=CHISQ.INV(0.8427,1) ? 2",Advanced,
-306,CHISQ.INV.RT,Statistical,"=CHISQ.INV.RT(probability,deg_freedom)",Mengembalikan invers probabilitas satu sisi chi-kuadrat,"=CHISQ.INV.RT(0.1573,1) ? 2",Advanced,
-307,CHISQ.TEST,Statistical,"=CHISQ.TEST(actual_range,expected_range)",Mengembalikan uji independensi chi-kuadrat,#DIV/0!,Advanced,
-308,CONFIDENCE.NORM,Statistical,"=CONFIDENCE.NORM(alpha,standard_dev,size)",Mengembalikan interval kepercayaan untuk rata-rata populasi,"=CONFIDENCE.NORM(0.05,2,25) ? 0.784",Intermediate,
-309,CONFIDENCE.T,Statistical,"=CONFIDENCE.T(alpha,standard_dev,size)",Mengembalikan interval kepercayaan dengan distribusi t,"=CONFIDENCE.T(0.05,2,25) ? 0.816",Intermediate,
-310,CORREL,Statistical,"=CORREL(array1,array2)",Mengembalikan koefisien korelasi antar dua dataset,"=CORREL(A1:A10,B1:B10) ? 0.87",Intermediate,
-311,COUNT,Statistical,"=COUNT(value1,[value2],...)",Menghitung jumlah angka di argumen,"=COUNT(1,2,""a"") ? 2",Basic,
-312,COUNTA,Statistical,"=COUNTA(value1,[value2],...)",Menghitung jumlah nilai (termasuk teks/logika),"=COUNTA(1,""a"",TRUE) ? 3",Basic,
-313,COUNTBLANK,Statistical,=COUNTBLANK(range),Menghitung jumlah sel kosong dalam range,=COUNTBLANK(A1:A10) ? 2,Basic,
-314,COUNTIF,Statistical,"=COUNTIF(range,criteria)",Menghitung jumlah sel yang memenuhi kriteria,"=COUNTIF(A1:A10,"">5"") ? 3",Basic,
-315,COUNTIFS,Statistical,"=COUNTIFS(criteria_range1,criteria1,[criteria_range2,criteria2],...)",Menghitung jumlah sel berdasarkan beberapa kriteria,"=COUNTIFS(A1:A10,"">5"",B1:B10,""<10"") ? 2",Intermediate,
-316,COVARIANCE.P,Statistical,"=COVARIANCE.P(array1,array2)",Mengembalikan kovarians populasi,"=COVARIANCE.P(A1:A10,B1:B10) ? 1.25",Advanced,
-317,COVARIANCE.S,Statistical,"=COVARIANCE.S(array1,array2)",Mengembalikan kovarians sampel,"=COVARIANCE.S(A1:A10,B1:B10) ? 1.35",Advanced,
-318,DEVSQ,Statistical,"=DEVSQ(number1,[number2],...)",Mengembalikan jumlah kuadrat deviasi dari rata-rata,"=DEVSQ(1,2,3) ? 2",Intermediate,
-319,EXPON.DIST,Statistical,"=EXPON.DIST(x,lambda,cumulative)",Mengembalikan distribusi eksponensial,"=EXPON.DIST(2,1,TRUE) ? 0.865",Advanced,
-320,F.DIST,Statistical,"=F.DIST(x,deg_freedom1,deg_freedom2,cumulative)",Mengembalikan distribusi probabilitas F,"=F.DIST(2,3,5,TRUE) ? 0.857",Advanced,
-321,F.DIST.RT,Statistical,"=F.DIST.RT(x,deg_freedom1,deg_freedom2)",Mengembalikan distribusi probabilitas F sisi kanan,"=F.DIST.RT(2,3,5) ? 0.143",Advanced,
-322,F.INV,Statistical,"=F.INV(probability,deg_freedom1,deg_freedom2)",Mengembalikan invers distribusi F kumulatif,"=F.INV(0.857,3,5) ? 2",Advanced,
-323,F.INV.RT,Statistical,"=F.INV.RT(probability,deg_freedom1,deg_freedom2)",Mengembalikan invers distribusi F sisi kanan,"=F.INV.RT(0.143,3,5) ? 2",Advanced,
-324,F.TEST,Statistical,"=F.TEST(array1,array2)",Mengembalikan hasil uji F,"=F.TEST(A1:A10,B1:B10) ? 0.15",Advanced,
-325,FISHER,Statistical,=FISHER(x),Mengembalikan transformasi Fisher dari nilai korelasi,=FISHER(0.5) ? 0.5493,Advanced,
-326,FISHERINV,Statistical,=FISHERINV(y),Mengembalikan invers transformasi Fisher,=FISHERINV(0.5493) ? 0.5,Advanced,
-327,FORECAST,Statistical,"=FORECAST(x,known_y's,known_x's)",Mengembalikan nilai sepanjang tren linier,"=FORECAST(10,B1:B10,A1:A10) ? 25",Intermediate,"Digunakan di Excel 2016+, digantikan dengan FORECAST.LINEAR"
-328,FORECAST.ETS,Statistical,"=FORECAST.ETS(target_date,values,timeline,[seasonality],[data_completion],[aggregation])",Mengembalikan nilai masa depan menggunakan algoritma ETS,"=FORECAST.ETS(TODAY()+30,B1:B30,A1:A30) ? 100",Advanced,
-329,FORECAST.ETS.CONFINT,Statistical,"=FORECAST.ETS.CONFINT(target_date,values,timeline,[seasonality],[confidence])",Mengembalikan interval kepercayaan untuk nilai forecast,"=FORECAST.ETS.CONFINT(TODAY()+30,B1:B30,A1:A30) ? 15",Advanced,
-330,FORECAST.ETS.SEASONALITY,Statistical,"=FORECAST.ETS.SEASONALITY(values,timeline,[data_completion],[aggregation])",Mengembalikan panjang pola musiman dari time series,"=FORECAST.ETS.SEASONALITY(B1:B30,A1:A30) ? 12",Advanced,
-331,FORECAST.ETS.STAT,Statistical,"=FORECAST.ETS.STAT(values,timeline,stat_type,[seasonality],[data_completion],[aggregation])",Mengembalikan nilai statistik dari forecast time series,"=FORECAST.ETS.STAT(B1:B30,A1:A30,1) ? 0.85",Advanced,
-332,FORECAST.LINEAR,Statistical,"=FORECAST.LINEAR(x,known_y's,known_x's)",Mengembalikan nilai sepanjang tren linier (pengganti FORECAST),"=FORECAST.LINEAR(10,B1:B10,A1:A10) ? 25",Intermediate,
-333,FREQUENCY,Statistical,"=FREQUENCY(data_array,bins_array)",Mengembalikan distribusi frekuensi sebagai array vertikal,"=FREQUENCY(A1:A10,B1:B5) ? {0;2;3;5}",Intermediate,
-334,GAMMA,Statistical,=GAMMA(x),Mengembalikan nilai fungsi Gamma,=GAMMA(4) ? 6,Advanced,
-335,GAMMA.DIST,Statistical,"=GAMMA.DIST(x,alpha,beta,cumulative)",Mengembalikan distribusi gamma,"=GAMMA.DIST(2,3,1,TRUE) ? 0.8",Advanced,
-336,GAMMA.INV,Statistical,"=GAMMA.INV(probability,alpha,beta)",Mengembalikan invers distribusi gamma kumulatif,"=GAMMA.INV(0.8,3,1) ? 2",Advanced,
-337,GAMMALN,Statistical,=GAMMALN(x),"Mengembalikan ln dari fungsi gamma, ?(x)",=GAMMALN(4) ? 1.792,Advanced,
-338,GAMMALN.PRECISE,Statistical,=GAMMALN.PRECISE(x),"Mengembalikan ln dari fungsi gamma, ?(x)",=GAMMALN.PRECISE(4) ? 1.792,Advanced,
-339,GAUSS,Statistical,=GAUSS(x),Mengembalikan 0.5 dikurangi distribusi normal standar kumulatif,=GAUSS(1) ? 0.1587,Advanced,
-340,GEOMEAN,Statistical,"=GEOMEAN(number1,[number2],...)",Mengembalikan rata-rata geometrik,"=GEOMEAN(1,10) ? 3.162",Intermediate,
-341,GROWTH,Statistical,"=GROWTH(known_y's,known_x's,new_x's,[const])",Mengembalikan nilai sepanjang tren eksponensial,"=GROWTH(B1:B10,A1:A10) ? 120",Advanced,
-342,HARMEAN,Statistical,"=HARMEAN(number1,[number2],...)",Mengembalikan rata-rata harmonik,"=HARMEAN(1,4) ? 1.6",Intermediate,
-343,HYPGEOM.DIST,Statistical,"=HYPGEOM.DIST(sample_s,number_sample,population_s,population)",Mengembalikan distribusi hipergeometrik,"=HYPGEOM.DIST(2,5,10,20,FALSE) ? 0.2381",Advanced,
-344,INTERCEPT,Statistical,"=INTERCEPT(known_y's,known_x's)",Mengembalikan intercept garis regresi linear,"=INTERCEPT(B1:B10,A1:A10) ? 2",Intermediate,
-345,KURT,Statistical,"=KURT(number1,[number2],...)",Mengembalikan kurtosis dari dataset,=KURT(A1:A10) ? 1.5,Advanced,
-346,LARGE,Statistical,"=LARGE(array,k)",Mengembalikan nilai terbesar ke-k dari dataset,"=LARGE(A1:A10,2) ? 9",Intermediate,
-347,LINEST,Statistical,"=LINEST(known_y's,known_x's,[const],[stats])",Mengembalikan parameter garis tren linear,"=LINEST(B1:B10,A1:A10,TRUE,TRUE) ? {slope, intercept}",Advanced,
-348,LOGEST,Statistical,"=LOGEST(known_y's,known_x's,[const],[stats])",Mengembalikan parameter tren eksponensial,"=LOGEST(B1:B10,A1:A10) ? {a,b}",Advanced,
-349,LOGNORM.DIST,Statistical,"=LOGNORM.DIST(x,mean,standard_dev,cumulative)",Mengembalikan distribusi lognormal kumulatif,"=LOGNORM.DIST(2,0,1,TRUE) ? 0.841",Advanced,
-350,LOGNORM.INV,Statistical,"=LOGNORM.INV(probability,mean,standard_dev)",Mengembalikan invers distribusi lognormal,"=LOGNORM.INV(0.841,0,1) ? 2",Advanced,
-351,MAX,Statistical,"=MAX(number1,[number2],...)",Mengembalikan nilai maksimum,=MAX(A1:A10) ? 10,Basic,
-352,MAXA,Statistical,"=MAXA(value1,[value2],...)",Mengembalikan nilai maksimum termasuk teks/logika,"=MAXA(TRUE,1,2) ? 2",Intermediate,
-353,MAXIFS,Statistical,"=MAXIFS(max_range,criteria_range1,criteria1,[criteria_range2,criteria2],...)",Mengembalikan maksimum dari kriteria tertentu,"=MAXIFS(B1:B10,A1:A10,"">5"") ? 9",Advanced,
-354,MEDIAN,Statistical,"=MEDIAN(number1,[number2],...)",Mengembalikan median,=MEDIAN(A1:A10) ? 5,Basic,
-355,MIN,Statistical,"=MIN(number1,[number2],...)",Mengembalikan nilai minimum,=MIN(A1:A10) ? 1,Basic,
-356,MINA,Statistical,"=MINA(value1,[value2],...)",Mengembalikan nilai minimum termasuk teks/logika,"=MINA(TRUE,1,2) ? 0",Intermediate,
-357,MINIFS,Statistical,"=MINIFS(min_range,criteria_range1,criteria1,[criteria_range2,criteria2],...)",Mengembalikan minimum dari kriteria tertentu,"=MINIFS(B1:B10,A1:A10,"">5"") ? 6",Advanced,
-358,MODE.MULT,Statistical,"=MODE.MULT(number1,[number2],...)",Mengembalikan array nilai paling sering muncul,"=MODE.MULT(A1:A10) ? {5,7}",Intermediate,
-359,MODE.SNGL,Statistical,"=MODE.SNGL(number1,[number2],...)",Mengembalikan nilai paling sering muncul,=MODE.SNGL(A1:A10) ? 5,Intermediate,
-360,NEGBINOM.DIST,Statistical,"=NEGBINOM.DIST(number_f,number_s,probability_s,cumulative)",Mengembalikan distribusi binomial negatif,"=NEGBINOM.DIST(2,5,0.5,FALSE) ? 0.0625",Advanced,
-361,NORM.DIST,Statistical,"=NORM.DIST(x,mean,standard_dev,cumulative)",Mengembalikan distribusi normal kumulatif,"=NORM.DIST(1,0,1,TRUE) ? 0.841",Intermediate,
-362,NORM.S.DIST,Statistical,"=NORM.S.DIST(z,cumulative)",Mengembalikan distribusi normal standar kumulatif,"=NORM.S.DIST(1,TRUE) ? 0.841",Intermediate,
-363,NORM.S.INV,Statistical,=NORM.S.INV(probability),Mengembalikan invers distribusi normal standar,=NORM.S.INV(0.841) ? 1,Advanced,
-364,NORMINV,Statistical,"=NORMINV(probability,mean,standard_dev)",Mengembalikan invers distribusi normal kumulatif,"=NORMINV(0.841,0,1) ? 1",Advanced,
-365,PEARSON,Statistical,"=PEARSON(array1,array2)",Mengembalikan koefisien korelasi Pearson,"=PEARSON(A1:A10,B1:B10) ? 0.85",Intermediate,
-366,PERCENTILE.EXC,Statistical,"=PERCENTILE.EXC(array,k)","Mengembalikan persentil ke-k (0..1, eksklusif)","=PERCENTILE.EXC(A1:A10,0.25) ? 3",Intermediate,
-367,PERCENTILE.INC,Statistical,"=PERCENTILE.INC(array,k)",Mengembalikan persentil ke-k,"=PERCENTILE.INC(A1:A10,0.25) ? 3",Intermediate,
-368,PERCENTRANK.EXC,Statistical,"=PERCENTRANK.EXC(array,x,[significance])","Mengembalikan peringkat persentase (0..1, eksklusif)","=PERCENTRANK.EXC(A1:A10,5) ? 0.4",Intermediate,
-369,PERCENTRANK.INC,Statistical,"=PERCENTRANK.INC(array,x,[significance])",Mengembalikan peringkat persentase,"=PERCENTRANK.INC(A1:A10,5) ? 0.4",Intermediate,
-370,PERMUT,Statistical,"=PERMUT(number,number_chosen)",Mengembalikan jumlah permutasi,"=PERMUT(5,3) ? 60",Intermediate,
-371,PERMUTATIONA,Statistical,"=PERMUTATIONA(number,number_chosen)",Mengembalikan jumlah permutasi dengan pengulangan,"=PERMUTATIONA(5,3) ? 125",Advanced,
-372,PHI,Statistical,=PHI(x),Mengembalikan nilai fungsi kepadatan distribusi normal standar,=PHI(1) ? 0.24197,Advanced,
-373,POISSON.DIST,Statistical,"=POISSON.DIST(x,mean,cumulative)",Mengembalikan distribusi Poisson,"=POISSON.DIST(2,3,FALSE) ? 0.224",Advanced,
-374,PROB,Statistical,"=PROB(x_range,prob_range,lower_limit,[upper_limit])",Mengembalikan probabilitas nilai berada di antara batas,"=PROB(A1:A10,B1:B10,2,5) ? 0.3",Intermediate,
-375,QUARTILE.EXC,Statistical,"=QUARTILE.EXC(array,quart)",Mengembalikan kuartil dataset (0..1 eksklusif),"=QUARTILE.EXC(A1:A10,1) ? 2",Intermediate,
-376,QUARTILE.INC,Statistical,"=QUARTILE.INC(array,quart)",Mengembalikan kuartil dataset,"=QUARTILE.INC(A1:A10,1) ? 2",Intermediate,
-377,RANK.AVG,Statistical,"=RANK.AVG(number,ref,[order])",Mengembalikan peringkat angka dengan rata-rata jika ada tie,"=RANK.AVG(5,A1:A10,0) ? 4.5",Intermediate,
-378,RANK.EQ,Statistical,"=RANK.EQ(number,ref,[order])",Mengembalikan peringkat angka,"=RANK.EQ(5,A1:A10,0) ? 4",Intermediate,
-379,RSQ,Statistical,"=RSQ(known_y's,known_x's)",Mengembalikan kuadrat koefisien korelasi Pearson,"=RSQ(B1:B10,A1:A10) ? 0.72",Advanced,
-380,SKEW,Statistical,"=SKEW(number1,[number2],...)",Mengembalikan skewness distribusi,=SKEW(A1:A10) ? 0.5,Advanced,
-381,SKEW.P,Statistical,"=SKEW.P(number1,[number2],...)",Mengembalikan skewness distribusi populasi,=SKEW.P(A1:A10) ? 0.48,Advanced,
-382,SLOPE,Statistical,"=SLOPE(known_y's,known_x's)",Mengembalikan slope garis regresi linear,"=SLOPE(B1:B10,A1:A10) ? 1.5",Intermediate,
-383,SMALL,Statistical,"=SMALL(array,k)",Mengembalikan nilai terkecil ke-k,"=SMALL(A1:A10,2) ? 3",Intermediate,
-384,STANDARDIZE,Statistical,"=STANDARDIZE(x,mean,standard_dev)",Mengembalikan nilai dinormalisasi,"=STANDARDIZE(5,3,2) ? 1",Advanced,
-385,STDEV.P,Statistical,"=STDEV.P(number1,[number2],...)",Menghitung deviasi standar populasi,=STDEV.P(A1:A10) ? 1.8,Intermediate,
-386,STDEV.S,Statistical,"=STDEV.S(number1,[number2],...)",Mengestimasi deviasi standar sampel,=STDEV.S(A1:A10) ? 1.9,Intermediate,
-387,STDEVA,Statistical,"=STDEVA(value1,[value2],...)",Mengestimasi deviasi standar sampel termasuk teks/logika,"=STDEVA(TRUE,1,2) ? 0.5",Advanced,
-388,STDEVPA,Statistical,"=STDEVPA(value1,[value2],...)",Menghitung deviasi standar populasi termasuk teks/logika,"=STDEVPA(TRUE,1,2) ? 0.5",Advanced,
-389,STEYX,Statistical,"=STEYX(known_y's,known_x's)",Mengembalikan standard error prediksi y untuk setiap x,"=STEYX(B1:B10,A1:A10) ? 0.8",Advanced,
-390,T.DIST,Statistical,"=T.DIST(x,degrees_freedom,cumulative)",Mengembalikan distribusi t-Student,"=T.DIST(1.5,10,TRUE) ? 0.91",Advanced,
-391,T.DIST.2T,Statistical,"=T.DIST.2T(x,degrees_freedom)",Mengembalikan distribusi t dua sisi,"=T.DIST.2T(1.5,10) ? 0.18",Advanced,
-392,T.DIST.RT,Statistical,"=T.DIST.RT(x,degrees_freedom)",Mengembalikan distribusi t-Student satu sisi,"=T.DIST.RT(1.5,10) ? 0.09",Advanced,
-393,T.INV,Statistical,"=T.INV(probability,degrees_freedom)",Mengembalikan nilai t dari distribusi t,"=T.INV(0.95,10) ? 1.812",Advanced,
-394,T.INV.2T,Statistical,"=T.INV.2T(probability,degrees_freedom)",Mengembalikan invers distribusi t dua sisi,"=T.INV.2T(0.05,10) ? 2.228",Advanced,
-395,T.TEST,Statistical,"=T.TEST(array1,array2,tails,type)",Mengembalikan probabilitas t-test,"=T.TEST(A1:A10,B1:B10,2,2) ? 0.04",Advanced,
-396,TREND,Statistical,"=TREND(known_y's,known_x's,new_x's,[const])",Mengembalikan nilai sepanjang tren linear,"=TREND(B1:B10,A1:A10) ? {predicted values}",Advanced,
-397,TRIMMEAN,Statistical,"=TRIMMEAN(array,percent)",Mengembalikan rata-rata dataset setelah trimming,"=TRIMMEAN(A1:A10,0.2) ? 5",Intermediate,
-398,VAR.P,Statistical,"=VAR.P(number1,[number2],...)",Menghitung varians populasi,=VAR.P(A1:A10) ? 3.2,Intermediate,
-399,VAR.S,Statistical,"=VAR.S(number1,[number2],...)",Mengestimasi varians sampel,=VAR.S(A1:A10) ? 3.5,Intermediate,
-400,VARA,Statistical,"=VARA(value1,[value2],...)",Mengestimasi varians sampel termasuk teks/logika,"=VARA(TRUE,1,2) ? 0.5",Advanced,
-401,VARPA,Statistical,"=VARPA(value1,[value2],...)",Menghitung varians populasi termasuk teks/logika,"=VARPA(TRUE,1,2) ? 0.5",Advanced,
-402,WEIBULL.DIST,Statistical,"=WEIBULL.DIST(x,alpha,beta,cumulative)",Mengembalikan distribusi Weibull,"=WEIBULL.DIST(2,1.5,3,TRUE) ? 0.527",Advanced,
-403,Z.TEST,Statistical,"=Z.TEST(array,x,[sigma])",Mengembalikan probabilitas satu sisi uji z,"=Z.TEST(A1:A10,5) ? 0.08",Advanced,
-404,ARRAYTOTEXT,Text,"=ARRAYTOTEXT(array,[ignore])",Mengembalikan array sebagai teks,"=ARRAYTOTEXT(A1:B2) ? {""1"",""2"";""3"",""4""}",Intermediate,
-405,ASC,Text,=ASC(text),Mengubah huruf full-width/double-byte menjadi half-width/single-byte,"=ASC(""?"") ? ""A""",Basic,
-406,BAHTTEXT,Text,=BAHTTEXT(number),Mengubah angka menjadi teks dengan format baht,"=BAHTTEXT(123) ? ""?????????????????????????""",Intermediate,
-407,CHAR,Text,=CHAR(number),Mengembalikan karakter berdasarkan kode ASCII,"=CHAR(65) ? ""A""",Basic,
-408,CLEAN,Text,=CLEAN(text),Menghapus karakter non-printable,=CLEAN(A1) ? teks bersih,Basic,
-409,CODE,Text,=CODE(text),Mengembalikan kode numerik karakter pertama,"=CODE(""A"") ? 65",Basic,
-410,CONCAT,Text,"=CONCAT(text1,[text2],...)",Menggabungkan teks dari beberapa range/string,"=CONCAT(A1,B1) ? ""HaloDunia""",Intermediate,
-411,CONCATENATE,Text,"=CONCATENATE(text1,[text2],...)",Menggabungkan beberapa teks menjadi satu,"=CONCATENATE(A1,B1) ? ""HaloDunia""",Intermediate,
-412,DBCS,Text,=DBCS(text),Mengubah huruf half-width menjadi full-width,"=DBCS(""A"") ? ""?""",Basic,
-413,DOLLAR,Text,"=DOLLAR(number,[decimals])",Mengubah angka menjadi teks dengan format $,"=DOLLAR(1234.567,2) ? ""$1,234.57""",Intermediate,
-414,EXACT,Text,"=EXACT(text1,text2)",Mengecek apakah dua teks identik,"=EXACT(""Halo"",""halo"") ? FALSE",Basic,
-415,FIND,Text,"=FIND(find_text,within_text,[start_num])",Menemukan teks (case-sensitive),"=FIND(""l"",""Hello"") ? 3",Basic,
-416,FIXED,Text,"=FIXED(number,[decimals],[no_commas])",Format angka sebagai teks dengan desimal tetap,"=FIXED(123.456,2) ? ""123.46""",Intermediate,
-417,JIS,Text,=JIS(text),Mengubah karakter half-width menjadi full-width,"=JIS(""A"") ? ""?""",Basic,
-418,LEFT,Text,"=LEFT(text,[num_chars])",Mengambil karakter dari kiri,"=LEFT(""Halo"",2) ? ""Ha""",Basic,
-419,LEN,Text,=LEN(text),Menghitung jumlah karakter,"=LEN(""Halo"") ? 4",Basic,
-420,LOWER,Text,=LOWER(text),Mengubah teks menjadi huruf kecil,"=LOWER(""HALO"") ? ""halo""",Basic,
-421,MID,Text,"=MID(text,start_num,num_chars)",Mengambil karakter dari posisi tertentu,"=MID(""Halo"",2,2) ? ""al""",Basic,
-422,NUMBERVALUE,Text,"=NUMBERVALUE(text,[decimal_separator],[group_separator])",Mengubah teks menjadi angka,"=NUMBERVALUE(""1,234.5"") ? 1234.5",Intermediate,
-423,PHONETIC,Text,=PHONETIC(reference),Mengekstrak karakter furigana,"=PHONETIC(A1) ? ""????""",Advanced,
-424,PROPER,Text,=PROPER(text),Mengubah huruf awal setiap kata menjadi kapital,"=PROPER(""halo dunia"") ? ""Halo Dunia""",Basic,
-425,REPLACE,Text,"=REPLACE(old_text,start_num,num_chars,new_text)",Mengganti karakter dalam teks,"=REPLACE(""Halo"",2,2,""xx"") ? ""Hxxo""",Intermediate,
-426,REPT,Text,"=REPT(text,number_times)",Mengulang teks beberapa kali,"=REPT(""Ha"",3) ? ""HaHaHa""",Basic,
-427,RIGHT,Text,"=RIGHT(text,[num_chars])",Mengambil karakter dari kanan,"=RIGHT(""Halo"",2) ? ""lo""",Basic,
-428,SEARCH,Text,"=SEARCH(find_text,within_text,[start_num])",Menemukan teks (tidak case-sensitive),"=SEARCH(""l"",""Hello"") ? 3",Basic,
-429,SUBSTITUTE,Text,"=SUBSTITUTE(text,old_text,new_text,[instance_num])",Mengganti teks lama dengan baru,"=SUBSTITUTE(""Halo Halo"",""Halo"",""Hai"") ? ""Hai Hai""",Intermediate,
-430,T,Text,=T(value),Mengubah argumen menjadi teks,"=T(123) ? """"",Basic,
-431,TEXT,Text,"=TEXT(value,format_text)",Format angka menjadi teks,"=TEXT(1234,""$#,##0.00"") ? ""$1,234.00""",Intermediate,
-432,TEXTJOIN,Text,"=TEXTJOIN(delimiter,ignore_empty,text1,[text2],...)",Menggabungkan teks dengan delimiter,"=TEXTJOIN("", "",TRUE,A1:C1) ? ""A, B, C""",Intermediate,
-433,TRIM,Text,=TRIM(text),Menghapus spasi ekstra,"=TRIM("" Halo "") ? ""Halo""",Basic,
-434,UNICHAR,Text,=UNICHAR(number),Mengembalikan karakter Unicode dari nomor,"=UNICHAR(9731) ? ""?""",Intermediate,
-435,UNICODE,Text,=UNICODE(text),Mengembalikan kode Unicode karakter pertama,"=UNICODE(""A"") ? 65",Intermediate,
-436,UPPER,Text,=UPPER(text),Mengubah teks menjadi huruf besar,"=UPPER(""halo"") ? ""HALO""",Basic,
-437,VALUE,Text,=VALUE(text),Mengubah teks menjadi angka,"=VALUE(""123"") ? 123",Basic,
-438,VALUETOTEXT,Text,=VALUETOTEXT(value),Mengubah angka menjadi teks,"=VALUETOTEXT(123) ? ""123""",Basic,
-439,ENCODEURL,Web,=ENCODEURL(text),Mengembalikan teks URL-encoded,"=ENCODEURL(""https://a b.com"") ? ""https%3A%2F%2Fa%20b.com""",Intermediate,Hanya Excel desktop
-440,FILTERXML,Web,"=FILTERXML(xml,xpath)",Mengambil data spesifik dari XML,"=FILTERXML(A1,""//name"") ? ""John""",Advanced,Hanya Excel desktop
-441,WEBSERVICE,Web,=WEBSERVICE(url),Mengambil data dari web service,"=WEBSERVICE(""https://api.example.com"") ? JSON/text",Advanced,Hanya Excel desktop
+1,CALL,Add-in and Automation,"=CALL(""library"",""function"",""type"",argument1,...)",Memanggil prosedur dari library eksternal (DLL) atau resource kode.,Mengakses fungsi API Windows dari Excel.,3. Advanced,"Jarang digunakan, perlu pemahaman programming dan akses ke DLL."
+2,EUROCONVERT,Add-in and Automation,"=EUROCONVERT(number,source,target,fullprecision,triangulationprecision)",Mengkonversi nilai mata uang Euro dan antar mata uang anggota Uni Eropa.,Mengubah 1000 Franc Perancis ke Euro.,2. Intermediate,Butuh add-in Euro Tool.
+3,REGISTER.ID,Add-in and Automation,"=REGISTER.ID(module_text,procedure,...)",Mengembalikan ID register dari library (DLL) yang sudah terdaftar.,Mengecek apakah sebuah fungsi eksternal sudah terdaftar.,3. Advanced,Sering digunakan bersama CALL.
+4,CUBEKPIMEMBER,Cube,"=CUBEKPIMEMBER(connection,KPI_name,KPI_property,[caption])",Mengambil indikator KPI dari cube (OLAP) dan menampilkan nama atau propertinya.,Menampilkan KPI Monthly Gross Profit dari cube OLAP.,3. Advanced,Digunakan dalam analisis bisnis berbasis OLAP.
+5,CUBEMEMBER,Cube,"=CUBEMEMBER(connection,member_expression,[caption])",Mengambil member atau tuple dari hierarki cube.,Menampilkan Sales Region '= Asia dari cube.,3. Advanced,Membutuhkan koneksi ke OLAP server.
+6,CUBEMEMBERPROPERTY,Cube,"=CUBEMEMBERPROPERTY(connection,member_expression,property)",Mengambil nilai properti dari sebuah member dalam cube.,Mengambil Product Category Name dari member produk tertentu.,3. Advanced,Lebih spesifik dibanding CUBEMEMBER.
+7,CUBERANKEDMEMBER,Cube,"=CUBERANKEDMEMBER(connection,set_expression,rank,[caption])",Mengambil member berdasarkan ranking dalam sebuah set.,Menampilkan Top 1 Salesperson dalam cube.,3. Advanced,Berguna untuk ranking otomatis.
+8,CUBESET,Cube,"=CUBESET(connection,set_expression,[caption],[sort_order],[sort_by])",Mendefinisikan set anggota dari cube berdasarkan ekspresi tertentu.,Membuat set Top 10 Products by Sales.,3. Advanced,Membutuhkan ekspresi MDX.
+9,CUBESETCOUNT,Cube,=CUBESETCOUNT(set),Menghitung jumlah item dalam sebuah set cube.,Mengecek jumlah produk dalam kategori tertentu.,3. Advanced,Biasanya digunakan bersama CUBESET.
+10,CUBEVALUE,Cube,"=CUBEVALUE(connection,member_expression1,[member_expression2],...)","Mengambil nilai agregat dari cube (misalnya total penjualan, jumlah karyawan, dll).",Menampilkan total Sales Revenue tahun 2024 dari cube.,3. Advanced,"Fungsi cube paling umum, mirip SUM tapi untuk OLAP."
+11,DAVERAGE,Database,"=DAVERAGE(database, field, criteria)",Menghitung nilai rata-rata dari field tertentu pada database yang memenuhi kriteria.,"Rata-rata gaji karyawan di departemen ""HR"".",2. Intermediate,Berguna untuk analisis data dengan filter.
+12,DCOUNT,Database,"=DCOUNT(database, field, criteria)",Menghitung jumlah record dalam field yang berisi angka sesuai kriteria.,Menghitung jumlah transaksi dengan nominal > 1 juta.,2. Intermediate,Hanya menghitung angka.
+13,DCOUNTA,Database,"=DCOUNTA(database, field, criteria)",Menghitung jumlah record non-kosong dalam field sesuai kriteria.,Menghitung jumlah karyawan yang punya email (field tidak kosong).,2. Intermediate,"Menghitung semua tipe data, bukan hanya angka."
+14,DGET,Database,"=DGET(database, field, criteria)",Mengambil satu nilai dari database yang sesuai kriteria unik.,Menampilkan nomor telepon karyawan dengan ID tertentu.,2. Intermediate,Akan error jika lebih dari 1 record cocok.
+15,DMAX,Database,"=DMAX(database, field, criteria)",Mengambil nilai maksimum dari field sesuai kriteria.,Nilai penjualan tertinggi di cabang Surabaya.,2. Intermediate,Mirip MAX tapi berbasis database + kriteria.
+16,DMIN,Database,"=DMIN(database, field, criteria)",Mengambil nilai minimum dari field sesuai kriteria.,Gaji terendah di departemen Finance.,2. Intermediate,Mirip MIN tapi dengan kriteria.
+17,DPRODUCT,Database,"=DPRODUCT(database, field, criteria)",Menghitung hasil perkalian dari nilai dalam field sesuai kriteria.,Menghitung total produksi unit untuk kategori tertentu.,3. Advanced,"Jarang digunakan, hati-hati overflow jika angka besar."
+18,DSTDEV,Database,"=DSTDEV(database, field, criteria)",Mengestimasi standar deviasi sampel dari field sesuai kriteria.,Menghitung variasi gaji karyawan berdasarkan sampel.,3. Advanced,Untuk analisis statistik berbasis sampel.
+19,DSTDEVP,Database,"=DSTDEVP(database, field, criteria)",Menghitung standar deviasi populasi dari field sesuai kriteria.,Menghitung variasi gaji seluruh karyawan.,3. Advanced,"Populasi penuh, beda dengan DSTDEV."
+20,DSUM,Database,"=DSUM(database, field, criteria)",Menjumlahkan nilai dalam field sesuai kriteria.,Total penjualan cabang Bandung.,2. Intermediate,Mirip SUMIFS tapi khusus database.
+21,DVAR,Database,"=DVAR(database, field, criteria)",Mengestimasi variansi sampel dari field sesuai kriteria.,Variansi nilai ujian 50 siswa (sampel).,3. Advanced,Analisis statistik sampel.
+22,DVARP,Database,"=DVARP(database, field, criteria)",Menghitung variansi populasi dari field sesuai kriteria.,Variansi nilai ujian seluruh siswa.,3. Advanced,Analisis statistik populasi.
+23,DATE,Date and Time,"=DATE(year, month, day)",Menghasilkan serial number dari tanggal tertentu.,"Membuat tanggal dari input tahun, bulan, dan hari.",0. Basic,-
+24,DATEDIF,Date and Time,"=DATEDIF(start_date,end_date,unit)","Menghitung selisih hari, bulan, atau tahun antara dua tanggal.",Menghitung umur dari tanggal lahir.,1. Beginner,"Unit bisa ""Y"", ""M"", ""D""."
+25,DATEVALUE,Date and Time,=DATEVALUE(date_text),Mengubah tanggal berbentuk teks menjadi serial number.,"Konversi ""01-01-2024"" menjadi nilai tanggal Excel.",0. Basic,Format teks harus valid.
+26,DAY,Date and Time,=DAY(serial_number),Menghasilkan angka hari dari tanggal.,Dari 01/01/2024 menghasilkan 1.,0. Basic,-
+27,DAYS,Date and Time,"=DAYS(end_date,start_date)",Menghitung jumlah hari antara dua tanggal.,Jumlah hari antara 1 Jan dan 31 Jan.,0. Basic,-
+28,DAYS360,Date and Time,"=DAYS360(start_date,end_date,[method])",Menghitung jumlah hari berdasarkan tahun 360 hari.,Perhitungan bunga pinjaman.,2. Intermediate,-
+29,EDATE,Date and Time,"=EDATE(start_date,months)",Menghasilkan tanggal sejumlah bulan sebelum/sesudah tanggal awal.,Tanggal jatuh tempo 3 bulan setelah tanggal invoice.,2. Intermediate,-
+30,EOMONTH,Date and Time,"=EOMONTH(start_date,months)",Menghasilkan hari terakhir bulan sejumlah bulan sebelum/sesudah tanggal awal.,Menentukan akhir bulan untuk laporan keuangan.,2. Intermediate,-
+31,HOUR,Date and Time,=HOUR(serial_number),Menghasilkan jam dari nilai waktu.,Dari 12:45 menghasilkan 12.,0. Basic,-
+32,ISOWEEKNUM,Date and Time,=ISOWEEKNUM(date),Menghasilkan nomor minggu ISO dari sebuah tanggal.,Mengetahui minggu ke berapa dalam kalender ISO.,2. Intermediate,-
+33,MINUTE,Date and Time,=MINUTE(serial_number),Menghasilkan menit dari nilai waktu.,Dari 12:45 menghasilkan 45.,0. Basic,-
+34,MONTH,Date and Time,=MONTH(serial_number),Menghasilkan bulan dari tanggal.,Dari 01/02/2024 menghasilkan 2.,0. Basic,-
+35,NETWORKDAYS,Date and Time,"=NETWORKDAYS(start_date,end_date,[holidays])",Menghitung jumlah hari kerja.,Menghitung jumlah hari kerja Januari 2024 tanpa libur nasional.,2. Intermediate,Perhitungan default weekend = Sabtu-Minggu.
+36,NETWORKDAYS.INTL,Date and Time,"=NETWORKDAYS.INTL(start_date,end_date,weekend,[holidays])","Sama dengan NETWORKDAYS, tapi bisa atur hari libur mingguan.","Hitung kerja Senin–Sabtu, libur Jumat.",3. Advanced,-
+37,NOW,Date and Time,=NOW(),Menghasilkan tanggal dan waktu saat ini.,Tampilkan timestamp saat file dibuka.,0. Basic,"Dinamis, berubah setiap refresh."
+38,SECOND,Date and Time,=SECOND(serial_number),Menghasilkan detik dari nilai waktu.,Dari 12:45:30 menghasilkan 30.,0. Basic,-
+39,TIME,Date and Time,"=TIME(hour,minute,second)","Membuat serial number waktu dari jam, menit, detik.",Membuat waktu 12:30:00.,0. Basic,-
+40,TIMEVALUE,Date and Time,=TIMEVALUE(time_text),Mengubah waktu dalam teks ke serial number.,"""12:30 PM"" menjadi nilai waktu Excel.",0. Basic,Format teks harus valid.
+41,TODAY,Date and Time,=TODAY(),Menghasilkan tanggal hari ini.,Membuat laporan harian otomatis.,0. Basic,"Dinamis, berubah setiap hari."
+42,WEEKDAY,Date and Time,"=WEEKDAY(serial_number,[return_type])",Menghasilkan nomor hari dalam seminggu.,01/01/2024 menghasilkan 2 (Senin).,0. Basic,Return_type menentukan Senin/Minggu awal minggu.
+43,WEEKNUM,Date and Time,"=WEEKNUM(serial_number,[return_type])",Menghasilkan nomor minggu dalam setahun.,Menentukan minggu ke berapa 01/01/2024.,2. Intermediate,Return_type bisa ISO atau default.
+44,WORKDAY,Date and Time,"=WORKDAY(start_date,days,[holidays])",Menghasilkan tanggal kerja sebelum/sesudah sejumlah hari.,Hitung tanggal deadline 10 hari kerja setelah 1 Jan.,2. Intermediate,-
+45,WORKDAY.INTL,Date and Time,"=WORKDAY.INTL(start_date,days,weekend,[holidays])","Sama dengan WORKDAY, tapi fleksibel weekend.",Deadline 10 hari kerja dengan libur Jumat-Sabtu.,3. Advanced,-
+46,YEAR,Date and Time,=YEAR(serial_number),Menghasilkan tahun dari tanggal.,Dari 01/01/2024 menghasilkan 2024.,0. Basic,-
+47,YEARFRAC,Date and Time,"=YEARFRAC(start_date,end_date,[basis])",Menghitung proporsi tahun antara dua tanggal.,Usia anak antara tanggal lahir sampai hari ini dalam pecahan tahun.,3. Advanced,Basis menentukan metode hitung.
+48,BESSELI,Engineering,"=BESSELI(x, n)",Mengembalikan fungsi Bessel termodifikasi In(x).,"=BESSELI(1.5, 2) ? Menghasilkan nilai fungsi Bessel In(1.5) untuk orde 2",3. Advanced,Relevan untuk bidang teknik/fisika.
+49,BESSELJ,Engineering,"=BESSELJ(x, n)",Mengembalikan fungsi Bessel Jn(x).,"=BESSELJ(3, 1) ? Menghasilkan nilai fungsi Bessel J1(3)",3. Advanced,Banyak digunakan di teknik/gelombang.
+50,BESSELK,Engineering,"=BESSELK(x, n)",Mengembalikan fungsi Bessel termodifikasi Kn(x).,"=BESSELK(2.5, 1) ? Menghasilkan nilai fungsi Bessel K1(2.5)",3. Advanced,Umumnya untuk riset ilmiah/engineering.
+51,BESSELY,Engineering,"=BESSELY(x, n)",Mengembalikan fungsi Bessel Yn(x).,"=BESSELY(5, 2) ? Menghasilkan nilai fungsi Bessel Y2(5)",3. Advanced,Konteks sains/engineering.
+52,BIN2DEC,Engineering,=BIN2DEC(number),Mengubah bilangan biner menjadi bilangan desimal.,=BIN2DEC(1011) ? 11,2. Intermediate,Berguna di sistem digital.
+53,BIN2HEX,Engineering,"=BIN2HEX(number, [places])",Mengubah bilangan biner menjadi heksadesimal.,=BIN2HEX(1011) ? B,2. Intermediate,Praktis untuk konversi komputer.
+54,BIN2OCT,Engineering,"=BIN2OCT(number, [places])",Mengubah bilangan biner menjadi oktal.,=BIN2OCT(1011) ? 13,2. Intermediate,Relevan untuk sistem bilangan digital.
+55,BITAND,Engineering,"=BITAND(number1, number2)",Menghasilkan bitwise AND dari dua angka.,"=BITAND(7,3) ? 3",2. Intermediate,Operasi bit tingkat rendah.
+56,BITLSHIFT,Engineering,"=BITLSHIFT(number, shift_amount)",Menggeser angka biner ke kiri sejumlah bit.,"=BITLSHIFT(5,2) ? 20",2. Intermediate,Umum di pemrograman digital.
+57,BITOR,Engineering,"=BITOR(number1, number2)",Menghasilkan bitwise OR dari dua angka.,"=BITOR(7,3) ? 7",2. Intermediate,Dasar manipulasi bit.
+58,BITRSHIFT,Engineering,"=BITRSHIFT(number, shift_amount)",Menggeser angka biner ke kanan sejumlah bit.,"=BITRSHIFT(20,2) ? 5",2. Intermediate,Kebalikan BITLSHIFT.
+59,BITXOR,Engineering,"=BITXOR(number1, number2)",Menghasilkan bitwise XOR dari dua angka.,"=BITXOR(5,3) ? 6",2. Intermediate,Berguna untuk operasi logika digital.
+60,COMPLEX,Engineering,"=COMPLEX(real_num, i_num, [suffix])",Mengonversi bilangan real dan imajiner ke bentuk kompleks.,"=COMPLEX(3,4) ? 3+4i",2. Intermediate,Berguna dalam perhitungan matematis.
+61,CONVERT,Engineering,"=CONVERT(number, from_unit, to_unit)",Mengubah angka dari satu sistem satuan ke satuan lain.,"=CONVERT(10,""cm"",""in"") ? 3.937",1. Beginner,Sangat berguna di banyak bidang.
+62,DEC2BIN,Engineering,"=DEC2BIN(number, [places])",Mengubah angka desimal menjadi biner.,=DEC2BIN(11) ? 1011,2. Intermediate,Untuk sistem bilangan komputer.
+63,DEC2HEX,Engineering,"=DEC2HEX(number, [places])",Mengubah angka desimal menjadi heksadesimal.,=DEC2HEX(255) ? FF,2. Intermediate,Konversi umum di digital.
+64,DEC2OCT,Engineering,"=DEC2OCT(number, [places])",Mengubah angka desimal menjadi oktal.,=DEC2OCT(58) ? 72,2. Intermediate,Relevan di pemrograman/komputasi.
+65,DELTA,Engineering,"=DELTA(number1, [number2])","Menguji apakah dua nilai sama (kembalikan 1 jika sama, 0 jika beda).","=DELTA(5,5) ? 1",1. Beginner,Alternatif cepat untuk tes kesamaan.
+66,ERF,Engineering,"=ERF(lower_limit, [upper_limit])",Mengembalikan fungsi error (probabilitas distribusi normal).,=ERF(0.2) ? 0.2227,3. Advanced,Dipakai di statistik.
+67,ERF.PRECISE,Engineering,=ERF.PRECISE(x),Versi lebih tepat dari fungsi ERF.,=ERF.PRECISE(1) ? 0.8427,3. Advanced,Sama dengan ERF tetapi lebih akurat.
+68,ERFC,Engineering,=ERFC(x),Mengembalikan fungsi komplemen dari error function.,=ERFC(1) ? 0.1573,3. Advanced,Statistik/teknik.
+69,ERFC.PRECISE,Engineering,=ERFC.PRECISE(x),Versi lebih tepat dari fungsi ERFC.,=ERFC.PRECISE(1) ? 0.1573,3. Advanced,Digunakan untuk distribusi probabilitas.
+70,GESTEP,Engineering,"=GESTEP(number, [step])",Menguji apakah angka lebih besar atau sama dengan ambang batas.,"=GESTEP(5,4) ? 1",1. Beginner,Cocok untuk logika threshold.
+71,HEX2BIN,Engineering,"=HEX2BIN(number, [places])",Mengubah bilangan heksadesimal ke biner.,"=HEX2BIN(""F"") ? 1111",2. Intermediate,Untuk konversi data digital.
+72,HEX2DEC,Engineering,=HEX2DEC(number),Mengubah bilangan heksadesimal ke desimal.,"=HEX2DEC(""F"") ? 15",2. Intermediate,Umum di konversi komputer.
+73,HEX2OCT,Engineering,"=HEX2OCT(number, [places])",Mengonversi bilangan heksadesimal menjadi bilangan oktal,"=HEX2OCT(""F"") ? 17",0. Basic,Pastikan input valid (0–FFFFFFFFF)
+74,IMABS,Engineering,=IMABS(inumber),Mengembalikan nilai absolut (modulus) dari bilangan kompleks,"=IMABS(""3+4i"") ? 5",2. Intermediate,Berguna dalam analisis bilangan kompleks
+75,IMAGINARY,Engineering,=IMAGINARY(inumber),Mengembalikan koefisien imajiner dari bilangan kompleks,"=IMAGINARY(""3+4i"") ? 4",0. Basic,Pasangan dengan IMREAL
+76,IMARGUMENT,Engineering,=IMARGUMENT(inumber),Mengembalikan argumen sudut (theta) bilangan kompleks dalam radian,"=IMARGUMENT(""1+i"") ? 0.785398 (?/4)",3. Advanced,Untuk representasi polar
+77,IMCONJUGATE,Engineering,=IMCONJUGATE(inumber),Mengembalikan konjugat dari bilangan kompleks,"=IMCONJUGATE(""3+4i"") ? 3-4i",2. Intermediate,Penting dalam aljabar kompleks
+78,IMCOS,Engineering,=IMCOS(inumber),Mengembalikan nilai cosinus dari bilangan kompleks,1.543080635,3. Advanced,Hasil berupa bilangan kompleks
+79,IMCOSH,Engineering,=IMCOSH(inumber),Mengembalikan nilai cosinus hiperbolik dari bilangan kompleks,0.833730025131149+0.988897705762865i,3. Advanced,Sering digunakan dalam perhitungan teknik
+80,IMCOT,Engineering,=IMCOT(inumber),Mengembalikan nilai cotangen dari bilangan kompleks,0.217621561854403-0.868014142895925i,3. Advanced,Berhubungan dengan fungsi trigonometri kompleks
+81,IMCSC,Engineering,=IMCSC(inumber),Mengembalikan nilai cosecan dari bilangan kompleks,0.621518017170428-0.303931001628427i,3. Advanced,Hasil bisa berupa bilangan kompleks
+82,IMCSCH,Engineering,=IMCSCH(inumber),Mengembalikan nilai cosecan hiperbolik dari bilangan kompleks,0.303931001628426-0.621518017170429i,3. Advanced,Perhitungan lebih advance
+83,IMDIV,Engineering,"=IMDIV(inumber1, inumber2)",Mengembalikan hasil bagi dari dua bilangan kompleks,3.5+0.5i,2. Intermediate,Numerator tidak boleh kosong
+84,IMEXP,Engineering,=IMEXP(inumber),Mengembalikan eksponensial (e^x) dari bilangan kompleks,"=IMEXP(""0+PI()i"") ? -1",3. Advanced,Cocok untuk perhitungan teknik
+85,IMLN,Engineering,=IMLN(inumber),Mengembalikan logaritma natural dari bilangan kompleks,0.346573590279973+0.785398163397448i,3. Advanced,Output dalam bentuk kompleks
+86,IMLOG10,Engineering,=IMLOG10(inumber),Mengembalikan logaritma basis-10 dari bilangan kompleks,2,3. Advanced,Hasil dapat berupa kompleks
+87,IMLOG2,Engineering,=IMLOG2(inumber),Mengembalikan logaritma basis-2 dari bilangan kompleks,"=IMLOG2(""8"") ? 3",3. Advanced,
+88,IMPOWER,Engineering,"=IMPOWER(inumber, number)",Mengembalikan bilangan kompleks yang dipangkatkan dengan integer,2+11i,3. Advanced,Pangkat bisa negatif
+89,IMPRODUCT,Engineering,"=IMPRODUCT(inumber1, [inumber2], …)",Mengembalikan hasil perkalian bilangan kompleks,11+10i,2. Intermediate,Bisa lebih dari dua argumen
+90,IMREAL,Engineering,=IMREAL(inumber),Mengembalikan koefisien real dari bilangan kompleks,"=IMREAL(""3+4i"") ? 3",0. Basic,Pasangan dengan IMAGINARY
+91,IMSEC,Engineering,=IMSEC(inumber),Mengembalikan nilai secan dari bilangan kompleks,0.498337030555187+0.591083841721045i,3. Advanced,Bagian dari trig kompleks
+92,IMSECH,Engineering,=IMSECH(inumber),Mengembalikan nilai secan hiperbolik dari bilangan kompleks,0.498337030555187-0.591083841721045i,3. Advanced,Jarang dipakai di level dasar
+93,IMSIN,Engineering,=IMSIN(inumber),Mengembalikan nilai sinus dari bilangan kompleks,1.1752011936438i,3. Advanced,
+94,IMSINH,Engineering,=IMSINH(inumber),Mengembalikan nilai sinus hiperbolik dari bilangan kompleks,0.634963914784736+1.29845758141598i,3. Advanced,
+95,IMSQRT,Engineering,=IMSQRT(inumber),Mengembalikan akar kuadrat dari bilangan kompleks,"=IMSQRT(""-1"") ? i",2. Intermediate,Sangat berguna di aljabar kompleks
+96,IMSUB,Engineering,"=IMSUB(inumber1, inumber2)",Mengembalikan selisih antara dua bilangan kompleks,"=IMSUB(""3+4i"",""1+2i"") ? 2+2i",0. Basic,
+97,IMSUM,Engineering,"=IMSUM(inumber1, [inumber2], …)",Mengembalikan jumlah dari bilangan kompleks,4+6i,0. Basic,Bisa lebih dari dua argumen
+98,IMTAN,Engineering,=IMTAN(inumber),Mengembalikan nilai tangen dari bilangan kompleks,0.271752585319512+1.08392332733869i,3. Advanced,
+99,OCT2BIN,Engineering,"=OCT2BIN(number, [places])",Mengonversi bilangan oktal menjadi biner,"=OCT2BIN(""17"") ? 1111",0. Basic,Input valid: 0–777
+100,OCT2DEC,Engineering,=OCT2DEC(number),Mengonversi bilangan oktal menjadi desimal,"=OCT2DEC(""17"") ? 15",0. Basic,
+101,OCT2HEX,Engineering,"=OCT2HEX(number, [places])",Mengonversi bilangan oktal menjadi heksadesimal,"=OCT2HEX(""17"") ? F",0. Basic,
+102,ACCRINT,Financial,"=ACCRINT(issue, first_interest, settlement, rate, par, frequency, [basis], [calc_method])",Menghitung bunga yang terakumulasi untuk sekuritas dengan pembayaran bunga periodik,12.5,2. Intermediate,Basis default = 0 (NASD)
+103,ACCRINTM,Financial,"=ACCRINTM(issue, settlement, rate, par, [basis])",Menghitung bunga yang terakumulasi untuk sekuritas dengan pembayaran bunga pada saat jatuh tempo,45.83333333,2. Intermediate,Basis default = 0 (NASD)
+104,AMORDEGRC,Financial,"=AMORDEGRC(cost, date_purchased, first_period, salvage, period, rate, [basis])",Menghitung depresiasi tiap periode akuntansi menggunakan koefisien depresiasi,2400,3. Advanced,Mengikuti standar akuntansi Prancis
+105,AMORLINC,Financial,"=AMORLINC(cost, date_purchased, first_period, salvage, period, rate, [basis])",Menghitung depresiasi tiap periode akuntansi dengan metode linier,2000,2. Intermediate,
+106,COUPDAYBS,Financial,"=COUPDAYBS(settlement, maturity, frequency, [basis])",Menghitung jumlah hari dari awal periode kupon hingga tanggal penyelesaian,90,2. Intermediate,
+107,COUPDAYS,Financial,"=COUPDAYS(settlement, maturity, frequency, [basis])",Menghitung jumlah hari dalam periode kupon yang berisi tanggal penyelesaian,180,2. Intermediate,
+108,COUPDAYSNC,Financial,"=COUPDAYSNC(settlement, maturity, frequency, [basis])",Menghitung jumlah hari dari tanggal penyelesaian hingga kupon berikutnya,90,2. Intermediate,
+109,COUPNCD,Financial,"=COUPNCD(settlement, maturity, frequency, [basis])",Mengembalikan tanggal kupon berikutnya setelah tanggal penyelesaian,45839,2. Intermediate,
+110,COUPNUM,Financial,"=COUPNUM(settlement, maturity, frequency, [basis])",Menghitung jumlah kupon yang dibayarkan antara tanggal penyelesaian dan jatuh tempo,2,2. Intermediate,
+111,COUPPCD,Financial,"=COUPPCD(settlement, maturity, frequency, [basis])",Mengembalikan tanggal kupon sebelumnya sebelum tanggal penyelesaian,45658,2. Intermediate,
+112,CUMIPMT,Financial,"=CUMIPMT(rate, nper, pv, start_period, end_period, type)",Menghitung jumlah bunga yang dibayarkan antara dua periode,-5889.216434,2. Intermediate,
+113,CUMPRINC,Financial,"=CUMPRINC(rate, nper, pv, start_period, end_period, type)",Menghitung jumlah pokok yang dibayarkan antara dua periode,-450.1657094,2. Intermediate,
+114,DB,Financial,"=DB(cost, salvage, life, period, [month])",Menghitung depresiasi aset per periode menggunakan metode saldo menurun tetap,"£3,690.00",2. Intermediate,
+115,DDB,Financial,"=DDB(cost, salvage, life, period, [factor])",Menghitung depresiasi aset per periode menggunakan metode double declining balance,"£4,000.00",2. Intermediate,Factor default = 2
+116,DISC,Financial,"=DISC(settlement, maturity, pr, redemption, [basis])",Menghitung tingkat diskonto untuk sekuritas,0.066666667,2. Intermediate,
+117,DOLLARDE,Financial,"=DOLLARDE(fractional_dollar, fraction)",Mengubah harga dollar dari pecahan ke desimal,"=DOLLARDE(1.02,16) ? 1.125",0. Basic,
+118,DOLLARFR,Financial,"=DOLLARFR(decimal_dollar, fraction)",Mengubah harga dollar dari desimal ke pecahan,"=DOLLARFR(1.125,16) ? 1.02",0. Basic,
+119,DURATION,Financial,"=DURATION(settlement, maturity, coupon, yld, frequency, [basis])",Menghitung durasi tahunan sekuritas dengan pembayaran bunga periodik,0.737746847,3. Advanced,
+120,EFFECT,Financial,"=EFFECT(nominal_rate, npery)",Menghitung tingkat bunga efektif tahunan,"=EFFECT(0.06,2) ? 0.0609",0. Basic,
+121,FV,Financial,"=FV(rate, nper, pmt, [pv], [type])",Menghitung nilai masa depan investasi,£855.78,0. Basic,
+122,FVSCHEDULE,Financial,"=FVSCHEDULE(principal, schedule)",Menghitung nilai masa depan dari modal awal setelah menerapkan serangkaian tingkat bunga majemuk,1190.91,2. Intermediate,
+123,INTRATE,Financial,"=INTRATE(settlement, maturity, investment, redemption, [basis])",Menghitung tingkat bunga untuk sekuritas yang diinvestasikan penuh,0.266666667,2. Intermediate,
+124,IPMT,Financial,"=IPMT(rate, per, nper, pv, [fv], [type])",Menghitung pembayaran bunga untuk investasi per periode,-£50.00,0. Basic,
+125,IRR,Financial,"=IRR(values, [guess])",Menghitung internal rate of return untuk serangkaian arus kas,"=IRR({-1000,300,400,500}) ? 0.138",2. Intermediate,
+126,ISPMT,Financial,"=ISPMT(rate, per, nper, pv)",Menghitung bunga dibayarkan selama periode tertentu,-40,2. Intermediate,
+127,MDURATION,Financial,"=MDURATION(settlement, maturity, coupon, yld, frequency, [basis])",Menghitung Macauley modified duration untuk sekuritas dengan nilai nominal $100,0.716259075,3. Advanced,
+128,MIRR,Financial,"=MIRR(values, finance_rate, reinvest_rate)",Menghitung internal rate of return dengan arus kas positif dan negatif dibiayai dengan tingkat berbeda,8%,3. Advanced,
+129,NOMINAL,Financial,"=NOMINAL(effect_rate, npery)",Menghitung tingkat bunga nominal tahunan,0.059126028,0. Basic,
+130,NPER,Financial,"=NPER(rate, pmt, pv, [fv], [type])",Menghitung jumlah periode untuk suatu investasi,"=NPER(0.05,-100,5000)",0. Basic,
+131,NPV,Financial,"=NPV(rate, value1, [value2], ...)",Menghitung net present value dari arus kas periodik,"£1,080.44",2. Intermediate,
+132,ODDFPRICE,Financial,"=ODDFPRICE(settlement, maturity, rate, yld, redemption, frequency, [basis])",Menghitung harga per $100 face value untuk sekuritas dengan periode pertama ganjil,"=ODDFPRICE(""01-04-2025"",""01-01-2026"",0.05,0.06,100,2)",2. Intermediate,
+133,ODDFYIELD,Financial,"=ODDFYIELD(settlement, maturity, rate, pr, redemption, frequency, [basis])",Menghitung yield sekuritas dengan periode pertama ganjil,"=ODDFYIELD(""01-04-2025"",""01-01-2026"",0.05,95,100,2)",2. Intermediate,
+134,ODDLPRICE,Financial,"=ODDLPRICE(settlement, maturity, rate, yld, redemption, frequency, [basis])",Menghitung harga per $100 face value untuk sekuritas dengan periode terakhir ganjil,"=ODDLPRICE(""01-04-2025"",""01-01-2026"",0.05,0.06,100,2)",2. Intermediate,
+135,ODDLYIELD,Financial,"=ODDLYIELD(settlement, maturity, rate, pr, redemption, frequency, [basis])",Menghitung yield sekuritas dengan periode terakhir ganjil,"=ODDLYIELD(""01-04-2025"",""01-01-2026"",0.05,95,100,2)",2. Intermediate,
+136,PDURATION,Financial,"=PDURATION(rate, pv, fv)",Menghitung jumlah periode yang diperlukan investasi untuk mencapai nilai tertentu,14.20669908,2. Intermediate,
+137,PMT,Financial,"=PMT(rate, nper, pv, [fv], [type])",Menghitung pembayaran periodik untuk anuitas,"-£1,584.85",0. Basic,Negatif = pembayaran keluar
+138,PPMT,Financial,"=PPMT(rate, per, nper, pv, [fv], [type])",Menghitung pembayaran pokok pada periode tertentu,-£84.85,2. Intermediate,
+139,PRICE,Financial,"=PRICE(settlement, maturity, rate, yld, redemption, frequency, [basis])",Menghitung harga per $100 face value sekuritas dengan bunga periodik,99.26793583,2. Intermediate,
+140,PRICEDISC,Financial,"=PRICEDISC(settlement, maturity, discount, redemption, [basis])",Menghitung harga per $100 face value sekuritas diskonto,96.25,2. Intermediate,
+141,PRICEMAT,Financial,"=PRICEMAT(settlement, maturity, issue, rate, yld, [basis])",Menghitung harga per $100 face value sekuritas dengan bunga dibayarkan saat jatuh tempo,99.2284689,2. Intermediate,
+142,PV,Financial,"=PV(rate, nper, pmt, [fv], [type])",Menghitung present value investasi,"£18,929.29",0. Basic,
+143,RATE,Financial,"=RATE(nper, pmt, pv, [fv], [type], [guess])",Menghitung tingkat bunga per periode anuitas,0%,2. Intermediate,
+144,RECEIVED,Financial,"=RECEIVED(settlement, maturity, investment, discount, [basis])",Menghitung jumlah diterima saat jatuh tempo untuk sekuritas,1038.961039,2. Intermediate,
+145,RRI,Financial,"=RRI(nper, pv, fv)",Menghitung tingkat bunga ekuivalen untuk pertumbuhan investasi,0.148698355,0. Basic,
+146,SLN,Financial,"=SLN(cost, salvage, life)",Menghitung depresiasi metode garis lurus untuk satu periode,"£1,800.00",0. Basic,
+147,SYD,Financial,"=SYD(cost, salvage, life, period)",Menghitung depresiasi metode sum-of-years digits untuk periode tertentu,"£3,000.00",2. Intermediate,
+148,TBILLEQ,Financial,"=TBILLEQ(settlement, maturity, discount)",Menghitung bond-equivalent yield Treasury bill,0.051343368,2. Intermediate,
+149,TBILLPRICE,Financial,"=TBILLPRICE(settlement, maturity, discount)",Menghitung harga per $100 face value Treasury bill,98.73611111,2. Intermediate,
+150,TBILLYIELD,Financial,"=TBILLYIELD(settlement, maturity, pr)",Menghitung yield Treasury bill,0.20821284,2. Intermediate,
+151,VDB,Financial,"=VDB(cost, salvage, life, start_period, end_period, [factor], [no_switch])",Menghitung depresiasi aset untuk periode tertentu menggunakan metode declining balance,"£1,200.00",2. Intermediate,
+152,XIRR,Financial,"=XIRR(values, dates, [guess])",Menghitung internal rate of return untuk arus kas yang tidak periodik,0.409077853,3. Advanced,
+153,XNPV,Financial,"=XNPV(rate, values, dates)",Menghitung net present value untuk arus kas yang tidak periodik,"=XNPV(0.05,{300,400,500},{""01-01-2025"",""01-04-2025"",""01-07-2025""})",3. Advanced,
+154,YIELD,Financial,"=YIELD(settlement, maturity, rate, pr, redemption, frequency, [basis])",Menghitung yield sekuritas dengan bunga periodik,0.121489143,2. Intermediate,
+155,YIELDDISC,Financial,"=YIELDDISC(settlement, maturity, pr, redemption, [basis])","Menghitung annual yield sekuritas diskonto, misal Treasury bill",0.210526316,2. Intermediate,
+156,YIELDMAT,Financial,"=YIELDMAT(settlement, maturity, issue, rate, [basis])",Menghitung annual yield sekuritas yang membayar bunga saat jatuh tempo,"=YIELDMAT(""01-04-2025"",""01-01-2026"",""01-01-2025"",0.05)",2. Intermediate,
+157,CELL,Informational,"=CELL(info_type, [reference])","Mengembalikan informasi tentang format, lokasi, atau isi sel. Tidak tersedia di Excel untuk web",$A$1,0. Basic,
+158,ERROR.TYPE,Informational,=ERROR.TYPE(error_val),Mengembalikan angka yang sesuai dengan tipe error,2,0. Basic,
+159,INFO,Informational,=INFO(type_text),Mengembalikan info lingkungan operasional saat ini. Tidak tersedia di Excel untuk web,pcdos,0. Basic,
+160,ISBLANK,Informational,=ISBLANK(value),Mengembalikan TRUE jika sel kosong,=ISBLANK(A1),0. Basic,
+161,ISERR,Informational,=ISERR(value),Mengembalikan TRUE jika sel berisi error kecuali #N/A,=ISERR(A1),0. Basic,
+162,ISERROR,Informational,=ISERROR(value),Mengembalikan TRUE jika sel berisi error apapun,=ISERROR(A1),0. Basic,
+163,ISEVEN,Informational,=ISEVEN(number),Mengembalikan TRUE jika angka genap,=ISEVEN(4),0. Basic,
+164,ISFORMULA,Informational,=ISFORMULA(reference),Mengembalikan TRUE jika sel berisi formula,=ISFORMULA(A1),0. Basic,
+165,ISLOGICAL,Informational,=ISLOGICAL(value),Mengembalikan TRUE jika sel berisi nilai logika,=ISLOGICAL(TRUE),0. Basic,
+166,ISNA,Informational,=ISNA(value),Mengembalikan TRUE jika sel berisi error #N/A,=ISNA(A1),0. Basic,
+167,ISNONTEXT,Informational,=ISNONTEXT(value),Mengembalikan TRUE jika sel bukan teks,=ISNONTEXT(A1),0. Basic,
+168,ISNUMBER,Informational,=ISNUMBER(value),Mengembalikan TRUE jika sel berisi angka,=ISNUMBER(A1),0. Basic,
+169,ISODD,Informational,=ISODD(number),Mengembalikan TRUE jika angka ganjil,=ISODD(5),0. Basic,
+170,ISREF,Informational,=ISREF(value),Mengembalikan TRUE jika sel berisi referensi,=ISREF(A1),0. Basic,
+171,ISTEXT,Informational,=ISTEXT(value),Mengembalikan TRUE jika sel berisi teks,=ISTEXT(A1),0. Basic,
+172,N,Informational,=N(value),Mengubah nilai menjadi angka,=N(TRUE) ? 1,0. Basic,
+173,NA,Informational,=NA(),Mengembalikan error #N/A,=NA(),0. Basic,
+174,SHEET,Informational,=SHEET([reference]),Mengembalikan nomor sheet dari referensi,1,0. Basic,
+175,SHEETS,Informational,=SHEETS([reference]),Mengembalikan jumlah sheet dalam referensi,1,0. Basic,
+176,TYPE,Informational,=TYPE(value),Mengembalikan angka yang menunjukkan tipe data,2,0. Basic,
+177,AND,Logical,"=AND(logical1, [logical2], …)",Mengembalikan TRUE jika semua argumen TRUE,FALSE,0. Basic,
+178,FALSE,Logical,=FALSE(),Mengembalikan nilai logika FALSE,=FALSE(),0. Basic,
+179,IF,Logical,"=IF(logical_test, value_if_true, value_if_false)",Menentukan pengujian logika,Dewasa,0. Basic,
+180,IFERROR,Logical,"=IFERROR(value, value_if_error)",Mengembalikan nilai tertentu jika formula error,Error,0. Basic,
+181,IFNA,Logical,"=IFNA(value, value_if_na)",Mengembalikan nilai tertentu jika hasil #N/A,CUBEMEMBER,0. Basic,
+182,IFS,Logical,"=IFS(condition1, value1, [condition2, value2], …)",Mengecek satu atau lebih kondisi dan mengembalikan nilai sesuai kondisi TRUE pertama,A,0. Basic,
+183,NOT,Logical,=NOT(logical),Membalik logika argumen,=NOT(TRUE) ? FALSE,0. Basic,
+184,OR,Logical,"=OR(logical1, [logical2], …)",Mengembalikan TRUE jika salah satu argumen TRUE,"=OR(A1>5,B1<10)",0. Basic,
+185,SWITCH,Logical,"=SWITCH(expression, value1, result1, [value2, result2], …, [default])",Mengevaluasi ekspresi terhadap daftar nilai dan mengembalikan hasil dari nilai yang cocok pertama,Lainnya,0. Basic,
+186,TRUE,Logical,=TRUE(),Mengembalikan nilai logika TRUE,=TRUE(),0. Basic,
+187,XOR,Logical,"=XOR(logical1, [logical2], …)",Mengembalikan logika exclusive OR dari semua argumen,"=XOR(A1>5,B1<10)",0. Basic,
+188,ADDRESS,Lookup and Reference,"=ADDRESS(row_num, column_num, [abs_num], [a1], [sheet_text])",Mengembalikan referensi sebagai teks ke sebuah sel,"=ADDRESS(1,1) ? $A$1",0. Basic,
+189,AREAS,Lookup and Reference,=AREAS(reference),Mengembalikan jumlah area dalam referensi,"=AREAS(A1:B2, C1:D2) ? 2",0. Basic,
+190,CHOOSE,Lookup and Reference,"=CHOOSE(index_num, value1, [value2], …)",Memilih nilai dari daftar,"=CHOOSE(2,""Merah"",""Biru"",""Hijau"") ? ""Biru""",0. Basic,
+191,COLUMN,Lookup and Reference,=COLUMN([reference]),Mengembalikan nomor kolom,=COLUMN(B1) ? 2,0. Basic,
+192,COLUMNS,Lookup and Reference,=COLUMNS(array),Mengembalikan jumlah kolom dalam referensi,=COLUMNS(A1:C1) ? 3,0. Basic,
+193,FILTER,Lookup and Reference,"=FILTER(array, include, [if_empty])",Memfilter data berdasarkan kriteria,,2. Intermediate,
+194,FORMULATEXT,Lookup and Reference,=FORMULATEXT(reference),Mengembalikan formula dalam sel sebagai teks,=FORMULATEXT(B1),0. Basic,
+195,GETPIVOTDATA,Lookup and Reference,"=GETPIVOTDATA(data_field, pivot_table, [field1, item1], …)",Mengambil data dari PivotTable,"=GETPIVOTDATA(""Sales"",A3)",2. Intermediate,
+196,HLOOKUP,Lookup and Reference,"=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])",Mencari di baris pertama dan mengembalikan nilai,"=HLOOKUP(101,A1:D2,2,FALSE)",0. Basic,
+197,HYPERLINK,Lookup and Reference,"=HYPERLINK(link_location, [friendly_name])",Membuat shortcut atau link,Klik disini,0. Basic,
+198,INDEX,Lookup and Reference,"=INDEX(array, row_num, [column_num])",Mengambil nilai berdasarkan indeks,Add-in and Automation,0. Basic,
+199,INDIRECT,Lookup and Reference,"=INDIRECT(ref_text, [a1])",Mengembalikan referensi berdasarkan teks,No,0. Basic,
+200,LOOKUP,Lookup and Reference,"=LOOKUP(lookup_value, lookup_vector, [result_vector])",Mencari nilai dalam vektor,CUBEMEMBER,0. Basic,
+201,MATCH,Lookup and Reference,"=MATCH(lookup_value, lookup_array, [match_type])",Mencari posisi item,"=MATCH(25,A1:A10,0) ? 3",0. Basic,
+202,OFFSET,Lookup and Reference,"=OFFSET(reference, rows, cols, [height], [width])",Mengembalikan referensi offset,,2. Intermediate,
+203,ROW,Lookup and Reference,=ROW([reference]),Mengembalikan nomor baris,=ROW(B3) ? 3,0. Basic,
+204,ROWS,Lookup and Reference,=ROWS(array),Mengembalikan jumlah baris,=ROWS(A1:A10) ? 10,0. Basic,
+205,RTD,Lookup and Reference,"=RTD(progID, server, topic1, [topic2], …)",Mengambil data real-time dari program COM,"=RTD(""progid"",""server"",""topic"")",3. Advanced,
+206,SORT,Lookup and Reference,"=SORT(array, [sort_index], [sort_order], [by_col])",Mengurutkan isi range atau array,,2. Intermediate,
+207,SORTBY,Lookup and Reference,"=SORTBY(array, by_array1, [sort_order1], …)",Mengurutkan range berdasarkan array lain,"=SORTBY(A1:A10,B1:B10,1)",2. Intermediate,
+208,TRANSPOSE,Lookup and Reference,=TRANSPOSE(array),Mengembalikan transpose array,=TRANSPOSE(A1:C2),0. Basic,
+209,UNIQUE,Lookup and Reference,=UNIQUE(array),Mengembalikan nilai unik dari range,=UNIQUE(A1:A10),0. Basic,
+210,VLOOKUP,Lookup and Reference,"=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])",Mencari di kolom pertama dan mengembalikan nilai,"=VLOOKUP(101,A1:C10,3,FALSE)",0. Basic,
+211,XLOOKUP,Lookup and Reference,"=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])",Mencari item dan mengembalikan nilai sesuai match pertama,"=XLOOKUP(101,A1:A10,B1:B10,""Not found"")",2. Intermediate,
+212,XMATCH,Lookup and Reference,"=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])",Mengembalikan posisi relatif item dalam array,"=XMATCH(101,A1:A10)",2. Intermediate,
+213,ABS,Math and Trigonometry,=ABS(number),Mengembalikan nilai absolut,=ABS(-5) ? 5,0. Basic,
+214,ACOS,Math and Trigonometry,=ACOS(number),Mengembalikan arccosine dari angka,=ACOS(0.5) ? 1.0472 (radian),0. Basic,
+215,ACOSH,Math and Trigonometry,=ACOSH(number),Mengembalikan inverse hyperbolic cosine,=ACOSH(2) ? 1.31696,2. Intermediate,
+216,ACOT,Math and Trigonometry,=ACOT(number),Mengembalikan arccotangent dari angka,=ACOT(1) ? 0.7854 (radian),2. Intermediate,
+217,ACOTH,Math and Trigonometry,=ACOTH(number),Mengembalikan hyperbolic arccotangent,=ACOTH(2) ? 0.5493,3. Advanced,
+218,AGGREGATE,Math and Trigonometry,"=AGGREGATE(function_num, options, array, [k])",Mengembalikan agregat dari list atau database,45,2. Intermediate,
+219,ARABIC,Math and Trigonometry,=ARABIC(text),Mengubah angka Romawi menjadi angka Arabic,"=ARABIC(""XIV"") ? 14",0. Basic,
+220,ASIN,Math and Trigonometry,=ASIN(number),Mengembalikan arcsine dari angka,=ASIN(0.5) ? 0.5236 (radian),0. Basic,
+221,ASINH,Math and Trigonometry,=ASINH(number),Mengembalikan inverse hyperbolic sine,=ASINH(1) ? 0.8814,2. Intermediate,
+222,ATAN,Math and Trigonometry,=ATAN(number),Mengembalikan arctangent dari angka,=ATAN(1) ? 0.7854 (radian),0. Basic,
+223,ATAN2,Math and Trigonometry,"=ATAN2(x_num, y_num)",Mengembalikan arctangent dari koordinat x dan y,"=ATAN2(1,1) ? 0.7854",2. Intermediate,
+224,ATANH,Math and Trigonometry,=ATANH(number),Mengembalikan inverse hyperbolic tangent,=ATANH(0.5) ? 0.5493,2. Intermediate,
+225,BASE,Math and Trigonometry,"=BASE(number, radix, [min_length])",Mengubah angka menjadi teks dalam basis tertentu,"=BASE(10,2) ? ""1010""",0. Basic,
+226,CEILING.MATH,Math and Trigonometry,"=CEILING.MATH(number, [significance], [mode])",Membulatkan ke atas,"=CEILING.MATH(4.3,1) ? 5",0. Basic,
+227,CEILING.PRECISE,Math and Trigonometry,"=CEILING.PRECISE(number, [significance])","Membulatkan ke atas, independen tanda","=CEILING.PRECISE(-4.3,1) ? -4",0. Basic,
+228,COMBIN,Math and Trigonometry,"=COMBIN(number, number_chosen)",Menghitung jumlah kombinasi,"=COMBIN(5,2) ? 10",0. Basic,
+229,COMBINA,Math and Trigonometry,"=COMBINA(number, number_chosen)",Menghitung kombinasi dengan pengulangan,"=COMBINA(3,2) ? 6",0. Basic,
+230,COS,Math and Trigonometry,=COS(number),Mengembalikan cosinus dari angka,=COS(PI()/3) ? 0.5,0. Basic,
+231,COSH,Math and Trigonometry,=COSH(number),Mengembalikan hyperbolic cosine,=COSH(1) ? 1.5431,2. Intermediate,
+232,COT,Math and Trigonometry,=COT(number),Mengembalikan cotangent dari sudut,=COT(PI()/4) ? 1,2. Intermediate,
+233,COTH,Math and Trigonometry,=COTH(number),Mengembalikan hyperbolic cotangent,=COTH(1) ? 1.3130,3. Advanced,
+234,CSC,Math and Trigonometry,=CSC(number),Mengembalikan cosecant dari sudut,=CSC(PI()/2) ? 1,3. Advanced,
+235,CSCH,Math and Trigonometry,=CSCH(number),Mengembalikan hyperbolic cosecant,=CSCH(1) ? 0.8509,3. Advanced,
+236,DECIMAL,Math and Trigonometry,"=DECIMAL(text, radix)",Mengubah teks angka basis tertentu ke desimal,"=DECIMAL(""1010"",2) ? 10",0. Basic,
+237,DEGREES,Math and Trigonometry,=DEGREES(radians),Mengubah radian ke derajat,=DEGREES(PI()) ? 180,0. Basic,
+238,EVEN,Math and Trigonometry,=EVEN(number),Membulatkan angka ke bilangan genap terdekat,=EVEN(3) ? 4,0. Basic,
+239,EXP,Math and Trigonometry,=EXP(number),Mengembalikan e dipangkatkan angka,=EXP(1) ? 2.71828,0. Basic,
+240,FACT,Math and Trigonometry,=FACT(number),Mengembalikan faktorial angka,=FACT(5) ? 120,0. Basic,
+241,FACTDOUBLE,Math and Trigonometry,=FACTDOUBLE(number),Mengembalikan double faktorial,=FACTDOUBLE(6) ? 48,3. Advanced,
+242,FLOOR.MATH,Math and Trigonometry,"=FLOOR.MATH(number, [significance], [mode])",Membulatkan ke bawah,"=FLOOR.MATH(4.7,1) ? 4",0. Basic,
+243,FLOOR.PRECISE,Math and Trigonometry,"=FLOOR.PRECISE(number, [significance])","Membulatkan ke bawah, independen tanda","=FLOOR.PRECISE(-4.7,1) ? -5",0. Basic,
+244,GCD,Math and Trigonometry,"=GCD(number1, [number2], …)",Mengembalikan pembagi terbesar,"=GCD(12,18) ? 6",0. Basic,
+245,INT,Math and Trigonometry,=INT(number),Membulatkan ke bawah ke integer terdekat,=INT(4.7) ? 4,0. Basic,
+246,ISO.CEILING,Math and Trigonometry,"=ISO.CEILING(number, significance)",Membulatkan ke atas ke kelipatan tertentu,"=ISO.CEILING(5.5,2) ? 6",2. Intermediate,
+247,LCM,Math and Trigonometry,"=LCM(number1, [number2], …)",Mengembalikan kelipatan terkecil,"=LCM(12,18) ? 36",0. Basic,
+248,LET,Math and Trigonometry,"=LET(name1, value1, calculation)",Menyimpan nilai sementara dalam formula,"=LET(x,5,x+10) ? 15",3. Advanced,
+249,LN,Math and Trigonometry,=LN(number),Mengembalikan logaritma natural,=LN(2.71828) ? 1,0. Basic,
+250,LOG,Math and Trigonometry,"=LOG(number, [base])",Mengembalikan logaritma basis tertentu,"=LOG(100,10) ? 2",0. Basic,
+251,LOG10,Math and Trigonometry,=LOG10(number),Mengembalikan logaritma basis 10,=LOG10(100) ? 2,0. Basic,
+252,MDETERM,Math and Trigonometry,=MDETERM(array),Mengembalikan determinan matriks,=MDETERM(A1:C3),3. Advanced,
+253,MINVERSE,Math and Trigonometry,=MINVERSE(array),Mengembalikan invers matriks,=MINVERSE(A1:C3),3. Advanced,
+254,MMULT,Math and Trigonometry,"=MMULT(array1,array2)",Mengembalikan hasil perkalian matriks,"=MMULT(A1:C3,D1:F3)",3. Advanced,
+255,MOD,Math and Trigonometry,"=MOD(number, divisor)",Mengembalikan sisa bagi,"=MOD(10,3) ? 1",0. Basic,
+256,MROUND,Math and Trigonometry,"=MROUND(number, multiple)",Membulatkan ke kelipatan tertentu,"=MROUND(7,3) ? 6",0. Basic,
+257,MULTINOMIAL,Math and Trigonometry,"=MULTINOMIAL(number1, [number2], …)",Mengembalikan multinomial dari angka,"=MULTINOMIAL(2,3) ? 10",3. Advanced,
+258,MUNIT,Math and Trigonometry,=MUNIT(dimension),Mengembalikan matriks identitas,=MUNIT(3) ? 3x3 identity matrix,3. Advanced,
+259,ODD,Math and Trigonometry,=ODD(number),Membulatkan angka ke bilangan ganjil terdekat,=ODD(3) ? 3,0. Basic,
+260,PI,Math and Trigonometry,=PI(),Mengembalikan nilai ?,=PI() ? 3.14159265359,0. Basic,
+261,POWER,Math and Trigonometry,"=POWER(number, power)",Mengembalikan angka dipangkatkan,"=POWER(2,3) ? 8",0. Basic,
+262,PRODUCT,Math and Trigonometry,"=PRODUCT(number1, [number2], …)",Mengalikan semua argumen,"=PRODUCT(2,3,4) ? 24",0. Basic,
+263,QUOTIENT,Math and Trigonometry,"=QUOTIENT(numerator, denominator)",Mengembalikan bagian integer dari pembagian,"=QUOTIENT(10,3) ? 3",0. Basic,
+264,RADIANS,Math and Trigonometry,=RADIANS(degrees),Mengonversi derajat ke radian,=RADIANS(180) ? 3.14159265,0. Basic,
+265,RAND,Math and Trigonometry,=RAND(),Mengembalikan angka acak antara 0 dan 1,=RAND() ? 0.3745,0. Basic,
+266,RANDARRAY,Math and Trigonometry,"=RANDARRAY([rows],[columns],[min],[max],[whole_number])",Mengembalikan array angka acak,"=RANDARRAY(2,3,0,10,TRUE)",3. Advanced,
+267,RANDBETWEEN,Math and Trigonometry,"=RANDBETWEEN(bottom,top)",Mengembalikan angka acak antara nilai yang ditentukan,"=RANDBETWEEN(1,10) ? 7",0. Basic,
+268,ROMAN,Math and Trigonometry,"=ROMAN(number,[form])",Mengonversi angka arab ke romawi,=ROMAN(2025) ? MMXXV,0. Basic,
+269,ROUND,Math and Trigonometry,"=ROUND(number,num_digits)",Membulatkan angka ke digit tertentu,"=ROUND(3.14159,2) ? 3.14",0. Basic,
+270,ROUNDDOWN,Math and Trigonometry,"=ROUNDDOWN(number,num_digits)",Membulatkan angka ke bawah,"=ROUNDDOWN(3.14159,2) ? 3.14",0. Basic,
+271,ROUNDUP,Math and Trigonometry,"=ROUNDUP(number,num_digits)",Membulatkan angka ke atas,"=ROUNDUP(3.14159,2) ? 3.15",0. Basic,
+272,SEC,Math and Trigonometry,=SEC(number),Mengembalikan secan dari sudut,=SEC(PI()/3) ? 2,0. Basic,
+273,SECH,Math and Trigonometry,=SECH(number),Mengembalikan secan hiperbolik dari sudut,=SECH(0) ? 1,0. Basic,
+274,SEQUENCE,Math and Trigonometry,"=SEQUENCE(rows,[columns],[start],[step])",Menghasilkan daftar angka berurutan,"=SEQUENCE(4) ? 1,2,3,4",3. Advanced,
+275,SERIESSUM,Math and Trigonometry,"=SERIESSUM(x,n,m,coefficients)",Mengembalikan jumlah deret pangkat,17,3. Advanced,
+276,SIGN,Math and Trigonometry,=SIGN(number),Mengembalikan tanda angka,=SIGN(-5) ? -1,0. Basic,
+277,SIN,Math and Trigonometry,=SIN(number),Mengembalikan sinus dari sudut,=SIN(PI()/2) ? 1,0. Basic,
+278,SINH,Math and Trigonometry,=SINH(number),Mengembalikan sinus hiperbolik dari angka,=SINH(1) ? 1.175201,0. Basic,
+279,SQRT,Math and Trigonometry,=SQRT(number),Mengembalikan akar kuadrat positif,=SQRT(16) ? 4,0. Basic,
+280,SQRTPI,Math and Trigonometry,=SQRTPI(number),Mengembalikan akar kuadrat dari (angka*?),=SQRTPI(2) ? 2.506628,0. Basic,
+281,SUBTOTAL,Math and Trigonometry,"=SUBTOTAL(function_num,ref1,[ref2],...)",Mengembalikan subtotal dari daftar atau database,"=SUBTOTAL(9,A1:A10) ? jumlah",2. Intermediate,
+282,SUM,Math and Trigonometry,"=SUM(number1,[number2],...)",Menjumlahkan semua argumen,"=SUM(1,2,3) ? 6",0. Basic,
+283,SUMIF,Math and Trigonometry,"=SUMIF(range,criteria,[sum_range])",Menjumlahkan sel yang memenuhi kriteria,30,0. Basic,
+284,SUMIFS,Math and Trigonometry,"=SUMIFS(sum_range,criteria_range1,criteria1,...)",Menjumlahkan sel berdasarkan beberapa kriteria,0,2. Intermediate,
+285,SUMPRODUCT,Math and Trigonometry,"=SUMPRODUCT(array1,[array2],...)",Mengembalikan jumlah hasil perkalian komponen array,0,2. Intermediate,
+286,SUMSQ,Math and Trigonometry,"=SUMSQ(number1,[number2],...)",Menjumlahkan kuadrat argumen,"=SUMSQ(2,3) ? 13",0. Basic,
+287,SUMX2MY2,Math and Trigonometry,"=SUMX2MY2(array_x,array_y)",Menjumlahkan selisih kuadrat array,"=SUMX2MY2({1,2},{3,4}) ? 5",3. Advanced,
+288,SUMX2PY2,Math and Trigonometry,"=SUMX2PY2(array_x,array_y)",Menjumlahkan jumlah kuadrat array,"=SUMX2PY2({1,2},{3,4}) ? 30",3. Advanced,
+289,SUMXMY2,Math and Trigonometry,"=SUMXMY2(array_x,array_y)",Menjumlahkan kuadrat selisih array,"=SUMXMY2({1,2},{3,4}) ? 5",3. Advanced,
+290,TAN,Math and Trigonometry,=TAN(number),Mengembalikan tangen sudut,=TAN(PI()/4) ? 1,0. Basic,
+291,TANH,Math and Trigonometry,=TANH(number),Mengembalikan tangen hiperbolik angka,=TANH(1) ? 0.761594,0. Basic,
+292,TRUNC,Math and Trigonometry,"=TRUNC(number,[num_digits])",Memotong angka menjadi integer,=TRUNC(4.7) ? 4,0. Basic,
+293,AVEDEV,Statistical,"=AVEDEV(number1,[number2],...)",Mengembalikan rata-rata deviasi absolut dari titik data terhadap rata-ratanya,"=AVEDEV(1,2,3,4) ? 1",0. Basic,
+294,AVERAGE,Statistical,"=AVERAGE(number1,[number2],...)",Mengembalikan rata-rata dari argumen,"=AVERAGE(1,2,3,4) ? 2.5",0. Basic,
+295,AVERAGEA,Statistical,"=AVERAGEA(value1,[value2],...)","Mengembalikan rata-rata dari argumen termasuk angka, teks, dan logika","=AVERAGEA(1,TRUE, ""3"") ? 1.333",0. Basic,
+296,AVERAGEIF,Statistical,"=AVERAGEIF(range,criteria,[average_range])",Mengembalikan rata-rata sel yang memenuhi kriteria,7.5,0. Basic,
+297,AVERAGEIFS,Statistical,"=AVERAGEIFS(average_range,criteria_range1,criteria1,...)",Mengembalikan rata-rata sel yang memenuhi beberapa kriteria,"=AVERAGEIFS(B1:B10,A1:A10,"">5"",C1:C10,""<10"")",2. Intermediate,
+298,BETA.DIST,Statistical,"=BETA.DIST(x,alpha,beta,cumulative,[A],[B])",Mengembalikan fungsi distribusi beta kumulatif,"=BETA.DIST(0.5,2,2,TRUE) ? 0.5",3. Advanced,
+299,BETA.INV,Statistical,"=BETA.INV(probability,alpha,beta,[A],[B])",Mengembalikan invers dari fungsi distribusi beta kumulatif,"=BETA.INV(0.5,2,2) ? 0.5",3. Advanced,
+300,BINOM.DIST,Statistical,"=BINOM.DIST(number_trials,probability_s,trials,cumulative)",Mengembalikan probabilitas binomial,"=BINOM.DIST(2,0.5,3,FALSE) ? 0.375",3. Advanced,
+301,BINOM.DIST.RANGE,Statistical,"=BINOM.DIST.RANGE(trials,probability_s,s,t)",Mengembalikan probabilitas hasil percobaan binomial,"=BINOM.DIST.RANGE(3,0.5,2,3) ? 0.5",3. Advanced,
+302,BINOM.INV,Statistical,"=BINOM.INV(trials,probability_s,alpha)",Mengembalikan nilai terkecil dengan distribusi binomial kumulatif ? ?,"=BINOM.INV(3,0.5,0.5) ? 1",3. Advanced,
+303,CHISQ.DIST,Statistical,"=CHISQ.DIST(x,deg_freedom,cumulative)",Mengembalikan distribusi chi-kuadrat kumulatif,"=CHISQ.DIST(2,1,TRUE) ? 0.8427",3. Advanced,
+304,CHISQ.DIST.RT,Statistical,"=CHISQ.DIST.RT(x,deg_freedom)",Mengembalikan probabilitas satu sisi distribusi chi-kuadrat,"=CHISQ.DIST.RT(2,1) ? 0.1573",3. Advanced,
+305,CHISQ.INV,Statistical,"=CHISQ.INV(probability,deg_freedom)",Mengembalikan invers distribusi chi-kuadrat kumulatif,"=CHISQ.INV(0.8427,1) ? 2",3. Advanced,
+306,CHISQ.INV.RT,Statistical,"=CHISQ.INV.RT(probability,deg_freedom)",Mengembalikan invers probabilitas satu sisi chi-kuadrat,"=CHISQ.INV.RT(0.1573,1) ? 2",3. Advanced,
+307,CHISQ.TEST,Statistical,"=CHISQ.TEST(actual_range,expected_range)",Mengembalikan uji independensi chi-kuadrat,"=CHISQ.TEST(A1:B10,C1:D10)",3. Advanced,
+308,CONFIDENCE.NORM,Statistical,"=CONFIDENCE.NORM(alpha,standard_dev,size)",Mengembalikan interval kepercayaan untuk rata-rata populasi,"=CONFIDENCE.NORM(0.05,2,25) ? 0.784",2. Intermediate,
+309,CONFIDENCE.T,Statistical,"=CONFIDENCE.T(alpha,standard_dev,size)",Mengembalikan interval kepercayaan dengan distribusi t,"=CONFIDENCE.T(0.05,2,25) ? 0.816",2. Intermediate,
+310,CORREL,Statistical,"=CORREL(array1,array2)",Mengembalikan koefisien korelasi antar dua dataset,"=CORREL(A1:A10,B1:B10) ? 0.87",2. Intermediate,
+311,COUNT,Statistical,"=COUNT(value1,[value2],...)",Menghitung jumlah angka di argumen,"=COUNT(1,2,""a"") ? 2",0. Basic,
+312,COUNTA,Statistical,"=COUNTA(value1,[value2],...)",Menghitung jumlah nilai (termasuk teks/logika),"=COUNTA(1,""a"",TRUE) ? 3",0. Basic,
+313,COUNTBLANK,Statistical,=COUNTBLANK(range),Menghitung jumlah sel kosong dalam range,=COUNTBLANK(A1:A10) ? 2,0. Basic,
+314,COUNTIF,Statistical,"=COUNTIF(range,criteria)",Menghitung jumlah sel yang memenuhi kriteria,"=COUNTIF(A1:A10,"">5"") ? 3",0. Basic,
+315,COUNTIFS,Statistical,"=COUNTIFS(criteria_range1,criteria1,[criteria_range2,criteria2],...)",Menghitung jumlah sel berdasarkan beberapa kriteria,"=COUNTIFS(A1:A10,"">5"",B1:B10,""<10"") ? 2",2. Intermediate,
+316,COVARIANCE.P,Statistical,"=COVARIANCE.P(array1,array2)",Mengembalikan kovarians populasi,"=COVARIANCE.P(A1:A10,B1:B10) ? 1.25",3. Advanced,
+317,COVARIANCE.S,Statistical,"=COVARIANCE.S(array1,array2)",Mengembalikan kovarians sampel,"=COVARIANCE.S(A1:A10,B1:B10) ? 1.35",3. Advanced,
+318,DEVSQ,Statistical,"=DEVSQ(number1,[number2],...)",Mengembalikan jumlah kuadrat deviasi dari rata-rata,"=DEVSQ(1,2,3) ? 2",2. Intermediate,
+319,EXPON.DIST,Statistical,"=EXPON.DIST(x,lambda,cumulative)",Mengembalikan distribusi eksponensial,"=EXPON.DIST(2,1,TRUE) ? 0.865",3. Advanced,
+320,F.DIST,Statistical,"=F.DIST(x,deg_freedom1,deg_freedom2,cumulative)",Mengembalikan distribusi probabilitas F,"=F.DIST(2,3,5,TRUE) ? 0.857",3. Advanced,
+321,F.DIST.RT,Statistical,"=F.DIST.RT(x,deg_freedom1,deg_freedom2)",Mengembalikan distribusi probabilitas F sisi kanan,"=F.DIST.RT(2,3,5) ? 0.143",3. Advanced,
+322,F.INV,Statistical,"=F.INV(probability,deg_freedom1,deg_freedom2)",Mengembalikan invers distribusi F kumulatif,"=F.INV(0.857,3,5) ? 2",3. Advanced,
+323,F.INV.RT,Statistical,"=F.INV.RT(probability,deg_freedom1,deg_freedom2)",Mengembalikan invers distribusi F sisi kanan,"=F.INV.RT(0.143,3,5) ? 2",3. Advanced,
+324,F.TEST,Statistical,"=F.TEST(array1,array2)",Mengembalikan hasil uji F,"=F.TEST(A1:A10,B1:B10) ? 0.15",3. Advanced,
+325,FISHER,Statistical,=FISHER(x),Mengembalikan transformasi Fisher dari nilai korelasi,=FISHER(0.5) ? 0.5493,3. Advanced,
+326,FISHERINV,Statistical,=FISHERINV(y),Mengembalikan invers transformasi Fisher,=FISHERINV(0.5493) ? 0.5,3. Advanced,
+327,FORECAST,Statistical,"=FORECAST(x,known_y's,known_x's)",Mengembalikan nilai sepanjang tren linier,"=FORECAST(10,B1:B10,A1:A10) ? 25",2. Intermediate,"Digunakan di Excel 2016+, digantikan dengan FORECAST.LINEAR"
+328,FORECAST.ETS,Statistical,"=FORECAST.ETS(target_date,values,timeline,[seasonality],[data_completion],[aggregation])",Mengembalikan nilai masa depan menggunakan algoritma ETS,"=FORECAST.ETS(TODAY()+30,B1:B30,A1:A30) ? 100",3. Advanced,
+329,FORECAST.ETS.CONFINT,Statistical,"=FORECAST.ETS.CONFINT(target_date,values,timeline,[seasonality],[confidence])",Mengembalikan interval kepercayaan untuk nilai forecast,"=FORECAST.ETS.CONFINT(TODAY()+30,B1:B30,A1:A30) ? 15",3. Advanced,
+330,FORECAST.ETS.SEASONALITY,Statistical,"=FORECAST.ETS.SEASONALITY(values,timeline,[data_completion],[aggregation])",Mengembalikan panjang pola musiman dari time series,"=FORECAST.ETS.SEASONALITY(B1:B30,A1:A30) ? 12",3. Advanced,
+331,FORECAST.ETS.STAT,Statistical,"=FORECAST.ETS.STAT(values,timeline,stat_type,[seasonality],[data_completion],[aggregation])",Mengembalikan nilai statistik dari forecast time series,"=FORECAST.ETS.STAT(B1:B30,A1:A30,1) ? 0.85",3. Advanced,
+332,FORECAST.LINEAR,Statistical,"=FORECAST.LINEAR(x,known_y's,known_x's)",Mengembalikan nilai sepanjang tren linier (pengganti FORECAST),"=FORECAST.LINEAR(10,B1:B10,A1:A10) ? 25",2. Intermediate,
+333,FREQUENCY,Statistical,"=FREQUENCY(data_array,bins_array)",Mengembalikan distribusi frekuensi sebagai array vertikal,"=FREQUENCY(A1:A10,B1:B5) ? {0;2;3;5}",2. Intermediate,
+334,GAMMA,Statistical,=GAMMA(x),Mengembalikan nilai fungsi Gamma,=GAMMA(4) ? 6,3. Advanced,
+335,GAMMA.DIST,Statistical,"=GAMMA.DIST(x,alpha,beta,cumulative)",Mengembalikan distribusi gamma,"=GAMMA.DIST(2,3,1,TRUE) ? 0.8",3. Advanced,
+336,GAMMA.INV,Statistical,"=GAMMA.INV(probability,alpha,beta)",Mengembalikan invers distribusi gamma kumulatif,"=GAMMA.INV(0.8,3,1) ? 2",3. Advanced,
+337,GAMMALN,Statistical,=GAMMALN(x),"Mengembalikan ln dari fungsi gamma, ?(x)",=GAMMALN(4) ? 1.792,3. Advanced,
+338,GAMMALN.PRECISE,Statistical,=GAMMALN.PRECISE(x),"Mengembalikan ln dari fungsi gamma, ?(x)",=GAMMALN.PRECISE(4) ? 1.792,3. Advanced,
+339,GAUSS,Statistical,=GAUSS(x),Mengembalikan 0.5 dikurangi distribusi normal standar kumulatif,=GAUSS(1) ? 0.1587,3. Advanced,
+340,GEOMEAN,Statistical,"=GEOMEAN(number1,[number2],...)",Mengembalikan rata-rata geometrik,"=GEOMEAN(1,10) ? 3.162",2. Intermediate,
+341,GROWTH,Statistical,"=GROWTH(known_y's,known_x's,new_x's,[const])",Mengembalikan nilai sepanjang tren eksponensial,"=GROWTH(B1:B10,A1:A10) ? 120",3. Advanced,
+342,HARMEAN,Statistical,"=HARMEAN(number1,[number2],...)",Mengembalikan rata-rata harmonik,"=HARMEAN(1,4) ? 1.6",2. Intermediate,
+343,HYPGEOM.DIST,Statistical,"=HYPGEOM.DIST(sample_s,number_sample,population_s,population)",Mengembalikan distribusi hipergeometrik,"=HYPGEOM.DIST(2,5,10,20,FALSE) ? 0.2381",3. Advanced,
+344,INTERCEPT,Statistical,"=INTERCEPT(known_y's,known_x's)",Mengembalikan intercept garis regresi linear,"=INTERCEPT(B1:B10,A1:A10) ? 2",2. Intermediate,
+345,KURT,Statistical,"=KURT(number1,[number2],...)",Mengembalikan kurtosis dari dataset,=KURT(A1:A10) ? 1.5,3. Advanced,
+346,LARGE,Statistical,"=LARGE(array,k)",Mengembalikan nilai terbesar ke-k dari dataset,"=LARGE(A1:A10,2) ? 9",2. Intermediate,
+347,LINEST,Statistical,"=LINEST(known_y's,known_x's,[const],[stats])",Mengembalikan parameter garis tren linear,"=LINEST(B1:B10,A1:A10,TRUE,TRUE) ? {slope, intercept}",3. Advanced,
+348,LOGEST,Statistical,"=LOGEST(known_y's,known_x's,[const],[stats])",Mengembalikan parameter tren eksponensial,"=LOGEST(B1:B10,A1:A10) ? {a,b}",3. Advanced,
+349,LOGNORM.DIST,Statistical,"=LOGNORM.DIST(x,mean,standard_dev,cumulative)",Mengembalikan distribusi lognormal kumulatif,"=LOGNORM.DIST(2,0,1,TRUE) ? 0.841",3. Advanced,
+350,LOGNORM.INV,Statistical,"=LOGNORM.INV(probability,mean,standard_dev)",Mengembalikan invers distribusi lognormal,"=LOGNORM.INV(0.841,0,1) ? 2",3. Advanced,
+351,MAX,Statistical,"=MAX(number1,[number2],...)",Mengembalikan nilai maksimum,=MAX(A1:A10) ? 10,0. Basic,
+352,MAXA,Statistical,"=MAXA(value1,[value2],...)",Mengembalikan nilai maksimum termasuk teks/logika,"=MAXA(TRUE,1,2) ? 2",2. Intermediate,
+353,MAXIFS,Statistical,"=MAXIFS(max_range,criteria_range1,criteria1,[criteria_range2,criteria2],...)",Mengembalikan maksimum dari kriteria tertentu,"=MAXIFS(B1:B10,A1:A10,"">5"") ? 9",3. Advanced,
+354,MEDIAN,Statistical,"=MEDIAN(number1,[number2],...)",Mengembalikan median,=MEDIAN(A1:A10) ? 5,0. Basic,
+355,MIN,Statistical,"=MIN(number1,[number2],...)",Mengembalikan nilai minimum,=MIN(A1:A10) ? 1,0. Basic,
+356,MINA,Statistical,"=MINA(value1,[value2],...)",Mengembalikan nilai minimum termasuk teks/logika,"=MINA(TRUE,1,2) ? 0",2. Intermediate,
+357,MINIFS,Statistical,"=MINIFS(min_range,criteria_range1,criteria1,[criteria_range2,criteria2],...)",Mengembalikan minimum dari kriteria tertentu,"=MINIFS(B1:B10,A1:A10,"">5"") ? 6",3. Advanced,
+358,MODE.MULT,Statistical,"=MODE.MULT(number1,[number2],...)",Mengembalikan array nilai paling sering muncul,"=MODE.MULT(A1:A10) ? {5,7}",2. Intermediate,
+359,MODE.SNGL,Statistical,"=MODE.SNGL(number1,[number2],...)",Mengembalikan nilai paling sering muncul,=MODE.SNGL(A1:A10) ? 5,2. Intermediate,
+360,NEGBINOM.DIST,Statistical,"=NEGBINOM.DIST(number_f,number_s,probability_s,cumulative)",Mengembalikan distribusi binomial negatif,"=NEGBINOM.DIST(2,5,0.5,FALSE) ? 0.0625",3. Advanced,
+361,NORM.DIST,Statistical,"=NORM.DIST(x,mean,standard_dev,cumulative)",Mengembalikan distribusi normal kumulatif,"=NORM.DIST(1,0,1,TRUE) ? 0.841",2. Intermediate,
+362,NORM.S.DIST,Statistical,"=NORM.S.DIST(z,cumulative)",Mengembalikan distribusi normal standar kumulatif,"=NORM.S.DIST(1,TRUE) ? 0.841",2. Intermediate,
+363,NORM.S.INV,Statistical,=NORM.S.INV(probability),Mengembalikan invers distribusi normal standar,=NORM.S.INV(0.841) ? 1,3. Advanced,
+364,NORMINV,Statistical,"=NORMINV(probability,mean,standard_dev)",Mengembalikan invers distribusi normal kumulatif,"=NORMINV(0.841,0,1) ? 1",3. Advanced,
+365,PEARSON,Statistical,"=PEARSON(array1,array2)",Mengembalikan koefisien korelasi Pearson,"=PEARSON(A1:A10,B1:B10) ? 0.85",2. Intermediate,
+366,PERCENTILE.EXC,Statistical,"=PERCENTILE.EXC(array,k)","Mengembalikan persentil ke-k (0..1, eksklusif)","=PERCENTILE.EXC(A1:A10,0.25) ? 3",2. Intermediate,
+367,PERCENTILE.INC,Statistical,"=PERCENTILE.INC(array,k)",Mengembalikan persentil ke-k,"=PERCENTILE.INC(A1:A10,0.25) ? 3",2. Intermediate,
+368,PERCENTRANK.EXC,Statistical,"=PERCENTRANK.EXC(array,x,[significance])","Mengembalikan peringkat persentase (0..1, eksklusif)","=PERCENTRANK.EXC(A1:A10,5) ? 0.4",2. Intermediate,
+369,PERCENTRANK.INC,Statistical,"=PERCENTRANK.INC(array,x,[significance])",Mengembalikan peringkat persentase,"=PERCENTRANK.INC(A1:A10,5) ? 0.4",2. Intermediate,
+370,PERMUT,Statistical,"=PERMUT(number,number_chosen)",Mengembalikan jumlah permutasi,"=PERMUT(5,3) ? 60",2. Intermediate,
+371,PERMUTATIONA,Statistical,"=PERMUTATIONA(number,number_chosen)",Mengembalikan jumlah permutasi dengan pengulangan,"=PERMUTATIONA(5,3) ? 125",3. Advanced,
+372,PHI,Statistical,=PHI(x),Mengembalikan nilai fungsi kepadatan distribusi normal standar,=PHI(1) ? 0.24197,3. Advanced,
+373,POISSON.DIST,Statistical,"=POISSON.DIST(x,mean,cumulative)",Mengembalikan distribusi Poisson,"=POISSON.DIST(2,3,FALSE) ? 0.224",3. Advanced,
+374,PROB,Statistical,"=PROB(x_range,prob_range,lower_limit,[upper_limit])",Mengembalikan probabilitas nilai berada di antara batas,"=PROB(A1:A10,B1:B10,2,5) ? 0.3",2. Intermediate,
+375,QUARTILE.EXC,Statistical,"=QUARTILE.EXC(array,quart)",Mengembalikan kuartil dataset (0..1 eksklusif),"=QUARTILE.EXC(A1:A10,1) ? 2",2. Intermediate,
+376,QUARTILE.INC,Statistical,"=QUARTILE.INC(array,quart)",Mengembalikan kuartil dataset,"=QUARTILE.INC(A1:A10,1) ? 2",2. Intermediate,
+377,RANK.AVG,Statistical,"=RANK.AVG(number,ref,[order])",Mengembalikan peringkat angka dengan rata-rata jika ada tie,"=RANK.AVG(5,A1:A10,0) ? 4.5",2. Intermediate,
+378,RANK.EQ,Statistical,"=RANK.EQ(number,ref,[order])",Mengembalikan peringkat angka,"=RANK.EQ(5,A1:A10,0) ? 4",2. Intermediate,
+379,RSQ,Statistical,"=RSQ(known_y's,known_x's)",Mengembalikan kuadrat koefisien korelasi Pearson,"=RSQ(B1:B10,A1:A10) ? 0.72",3. Advanced,
+380,SKEW,Statistical,"=SKEW(number1,[number2],...)",Mengembalikan skewness distribusi,=SKEW(A1:A10) ? 0.5,3. Advanced,
+381,SKEW.P,Statistical,"=SKEW.P(number1,[number2],...)",Mengembalikan skewness distribusi populasi,=SKEW.P(A1:A10) ? 0.48,3. Advanced,
+382,SLOPE,Statistical,"=SLOPE(known_y's,known_x's)",Mengembalikan slope garis regresi linear,"=SLOPE(B1:B10,A1:A10) ? 1.5",2. Intermediate,
+383,SMALL,Statistical,"=SMALL(array,k)",Mengembalikan nilai terkecil ke-k,"=SMALL(A1:A10,2) ? 3",2. Intermediate,
+384,STANDARDIZE,Statistical,"=STANDARDIZE(x,mean,standard_dev)",Mengembalikan nilai dinormalisasi,"=STANDARDIZE(5,3,2) ? 1",3. Advanced,
+385,STDEV.P,Statistical,"=STDEV.P(number1,[number2],...)",Menghitung deviasi standar populasi,=STDEV.P(A1:A10) ? 1.8,2. Intermediate,
+386,STDEV.S,Statistical,"=STDEV.S(number1,[number2],...)",Mengestimasi deviasi standar sampel,=STDEV.S(A1:A10) ? 1.9,2. Intermediate,
+387,STDEVA,Statistical,"=STDEVA(value1,[value2],...)",Mengestimasi deviasi standar sampel termasuk teks/logika,"=STDEVA(TRUE,1,2) ? 0.5",3. Advanced,
+388,STDEVPA,Statistical,"=STDEVPA(value1,[value2],...)",Menghitung deviasi standar populasi termasuk teks/logika,"=STDEVPA(TRUE,1,2) ? 0.5",3. Advanced,
+389,STEYX,Statistical,"=STEYX(known_y's,known_x's)",Mengembalikan standard error prediksi y untuk setiap x,"=STEYX(B1:B10,A1:A10) ? 0.8",3. Advanced,
+390,T.DIST,Statistical,"=T.DIST(x,degrees_freedom,cumulative)",Mengembalikan distribusi t-Student,"=T.DIST(1.5,10,TRUE) ? 0.91",3. Advanced,
+391,T.DIST.2T,Statistical,"=T.DIST.2T(x,degrees_freedom)",Mengembalikan distribusi t dua sisi,"=T.DIST.2T(1.5,10) ? 0.18",3. Advanced,
+392,T.DIST.RT,Statistical,"=T.DIST.RT(x,degrees_freedom)",Mengembalikan distribusi t-Student satu sisi,"=T.DIST.RT(1.5,10) ? 0.09",3. Advanced,
+393,T.INV,Statistical,"=T.INV(probability,degrees_freedom)",Mengembalikan nilai t dari distribusi t,"=T.INV(0.95,10) ? 1.812",3. Advanced,
+394,T.INV.2T,Statistical,"=T.INV.2T(probability,degrees_freedom)",Mengembalikan invers distribusi t dua sisi,"=T.INV.2T(0.05,10) ? 2.228",3. Advanced,
+395,T.TEST,Statistical,"=T.TEST(array1,array2,tails,type)",Mengembalikan probabilitas t-test,"=T.TEST(A1:A10,B1:B10,2,2) ? 0.04",3. Advanced,
+396,TREND,Statistical,"=TREND(known_y's,known_x's,new_x's,[const])",Mengembalikan nilai sepanjang tren linear,"=TREND(B1:B10,A1:A10) ? {predicted values}",3. Advanced,
+397,TRIMMEAN,Statistical,"=TRIMMEAN(array,percent)",Mengembalikan rata-rata dataset setelah trimming,"=TRIMMEAN(A1:A10,0.2) ? 5",2. Intermediate,
+398,VAR.P,Statistical,"=VAR.P(number1,[number2],...)",Menghitung varians populasi,=VAR.P(A1:A10) ? 3.2,2. Intermediate,
+399,VAR.S,Statistical,"=VAR.S(number1,[number2],...)",Mengestimasi varians sampel,=VAR.S(A1:A10) ? 3.5,2. Intermediate,
+400,VARA,Statistical,"=VARA(value1,[value2],...)",Mengestimasi varians sampel termasuk teks/logika,"=VARA(TRUE,1,2) ? 0.5",3. Advanced,
+401,VARPA,Statistical,"=VARPA(value1,[value2],...)",Menghitung varians populasi termasuk teks/logika,"=VARPA(TRUE,1,2) ? 0.5",3. Advanced,
+402,WEIBULL.DIST,Statistical,"=WEIBULL.DIST(x,alpha,beta,cumulative)",Mengembalikan distribusi Weibull,"=WEIBULL.DIST(2,1.5,3,TRUE) ? 0.527",3. Advanced,
+403,Z.TEST,Statistical,"=Z.TEST(array,x,[sigma])",Mengembalikan probabilitas satu sisi uji z,"=Z.TEST(A1:A10,5) ? 0.08",3. Advanced,
+404,ARRAYTOTEXT,Text,"=ARRAYTOTEXT(array,[ignore])",Mengembalikan array sebagai teks,"=ARRAYTOTEXT(A1:B2) ? {""1"",""2"";""3"",""4""}",2. Intermediate,
+405,ASC,Text,=ASC(text),Mengubah huruf full-width/double-byte menjadi half-width/single-byte,"=ASC(""?"") ? ""A""",0. Basic,
+406,BAHTTEXT,Text,=BAHTTEXT(number),Mengubah angka menjadi teks dengan format baht,"=BAHTTEXT(123) ? ""?????????????????????????""",2. Intermediate,
+407,CHAR,Text,=CHAR(number),Mengembalikan karakter berdasarkan kode ASCII,"=CHAR(65) ? ""A""",0. Basic,
+408,CLEAN,Text,=CLEAN(text),Menghapus karakter non-printable,=CLEAN(A1) ? teks bersih,0. Basic,
+409,CODE,Text,=CODE(text),Mengembalikan kode numerik karakter pertama,"=CODE(""A"") ? 65",0. Basic,
+410,CONCAT,Text,"=CONCAT(text1,[text2],...)",Menggabungkan teks dari beberapa range/string,"=CONCAT(A1,B1) ? ""HaloDunia""",2. Intermediate,
+411,CONCATENATE,Text,"=CONCATENATE(text1,[text2],...)",Menggabungkan beberapa teks menjadi satu,"=CONCATENATE(A1,B1) ? ""HaloDunia""",2. Intermediate,
+412,DBCS,Text,=DBCS(text),Mengubah huruf half-width menjadi full-width,"=DBCS(""A"") ? ""?""",0. Basic,
+413,DOLLAR,Text,"=DOLLAR(number,[decimals])",Mengubah angka menjadi teks dengan format $,"=DOLLAR(1234.567,2) ? ""$1,234.57""",2. Intermediate,
+414,EXACT,Text,"=EXACT(text1,text2)",Mengecek apakah dua teks identik,"=EXACT(""Halo"",""halo"") ? FALSE",0. Basic,
+415,FIND,Text,"=FIND(find_text,within_text,[start_num])",Menemukan teks (case-sensitive),"=FIND(""l"",""Hello"") ? 3",0. Basic,
+416,FIXED,Text,"=FIXED(number,[decimals],[no_commas])",Format angka sebagai teks dengan desimal tetap,"=FIXED(123.456,2) ? ""123.46""",2. Intermediate,
+417,JIS,Text,=JIS(text),Mengubah karakter half-width menjadi full-width,"=JIS(""A"") ? ""?""",0. Basic,
+418,LEFT,Text,"=LEFT(text,[num_chars])",Mengambil karakter dari kiri,"=LEFT(""Halo"",2) ? ""Ha""",0. Basic,
+419,LEN,Text,=LEN(text),Menghitung jumlah karakter,"=LEN(""Halo"") ? 4",0. Basic,
+420,LOWER,Text,=LOWER(text),Mengubah teks menjadi huruf kecil,"=LOWER(""HALO"") ? ""halo""",0. Basic,
+421,MID,Text,"=MID(text,start_num,num_chars)",Mengambil karakter dari posisi tertentu,"=MID(""Halo"",2,2) ? ""al""",0. Basic,
+422,NUMBERVALUE,Text,"=NUMBERVALUE(text,[decimal_separator],[group_separator])",Mengubah teks menjadi angka,"=NUMBERVALUE(""1,234.5"") ? 1234.5",2. Intermediate,
+423,PHONETIC,Text,=PHONETIC(reference),Mengekstrak karakter furigana,"=PHONETIC(A1) ? ""????""",3. Advanced,
+424,PROPER,Text,=PROPER(text),Mengubah huruf awal setiap kata menjadi kapital,"=PROPER(""halo dunia"") ? ""Halo Dunia""",0. Basic,
+425,REPLACE,Text,"=REPLACE(old_text,start_num,num_chars,new_text)",Mengganti karakter dalam teks,"=REPLACE(""Halo"",2,2,""xx"") ? ""Hxxo""",2. Intermediate,
+426,REPT,Text,"=REPT(text,number_times)",Mengulang teks beberapa kali,"=REPT(""Ha"",3) ? ""HaHaHa""",0. Basic,
+427,RIGHT,Text,"=RIGHT(text,[num_chars])",Mengambil karakter dari kanan,"=RIGHT(""Halo"",2) ? ""lo""",0. Basic,
+428,SEARCH,Text,"=SEARCH(find_text,within_text,[start_num])",Menemukan teks (tidak case-sensitive),"=SEARCH(""l"",""Hello"") ? 3",0. Basic,
+429,SUBSTITUTE,Text,"=SUBSTITUTE(text,old_text,new_text,[instance_num])",Mengganti teks lama dengan baru,"=SUBSTITUTE(""Halo Halo"",""Halo"",""Hai"") ? ""Hai Hai""",2. Intermediate,
+430,T,Text,=T(value),Mengubah argumen menjadi teks,"=T(123) ? """"",0. Basic,
+431,TEXT,Text,"=TEXT(value,format_text)",Format angka menjadi teks,"=TEXT(1234,""$#,##0.00"") ? ""$1,234.00""",2. Intermediate,
+432,TEXTJOIN,Text,"=TEXTJOIN(delimiter,ignore_empty,text1,[text2],...)",Menggabungkan teks dengan delimiter,"=TEXTJOIN("", "",TRUE,A1:C1) ? ""A, B, C""",2. Intermediate,
+433,TRIM,Text,=TRIM(text),Menghapus spasi ekstra,"=TRIM("" Halo "") ? ""Halo""",0. Basic,
+434,UNICHAR,Text,=UNICHAR(number),Mengembalikan karakter Unicode dari nomor,"=UNICHAR(9731) ? ""?""",2. Intermediate,
+435,UNICODE,Text,=UNICODE(text),Mengembalikan kode Unicode karakter pertama,"=UNICODE(""A"") ? 65",2. Intermediate,
+436,UPPER,Text,=UPPER(text),Mengubah teks menjadi huruf besar,"=UPPER(""halo"") ? ""HALO""",0. Basic,
+437,VALUE,Text,=VALUE(text),Mengubah teks menjadi angka,"=VALUE(""123"") ? 123",0. Basic,
+438,VALUETOTEXT,Text,=VALUETOTEXT(value),Mengubah angka menjadi teks,"=VALUETOTEXT(123) ? ""123""",0. Basic,
+439,ENCODEURL,Web,=ENCODEURL(text),Mengembalikan teks URL-encoded,"=ENCODEURL(""https://a b.com"") ? ""https%3A%2F%2Fa%20b.com""",2. Intermediate,Hanya Excel desktop
+440,FILTERXML,Web,"=FILTERXML(xml,xpath)",Mengambil data spesifik dari XML,"=FILTERXML(A1,""//name"") ? ""John""",3. Advanced,Hanya Excel desktop
+441,WEBSERVICE,Web,=WEBSERVICE(url),Mengambil data dari web service,"=WEBSERVICE(""https://api.example.com"") ? JSON/text",3. Advanced,Hanya Excel desktop
