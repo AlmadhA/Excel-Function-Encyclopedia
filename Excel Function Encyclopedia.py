@@ -50,7 +50,19 @@ st.markdown("""
             color: #CCCCCC !important;
             font-weight: 500;
         }
-
+            
+        /* ==============================
+           CUSTOM CODE
+        ============================== */
+        code {
+            font-size: 18px !important;   /* KOLOM SINTAKS */
+            font-weight: 600 !important;
+            color: #00FFF5 !important;
+            background-color: #1a1f25 !important;
+            padding: 3px 6px;
+            border-radius: 6px;
+        }
+            
         /* ==============================
            INPUT & DROPDOWN
         ============================== */
@@ -183,8 +195,8 @@ st.title("📘 Excel Function Encyclopedia")
 st.markdown("""
 Selamat datang di **Excel Function Encyclopedia**!  
 
-Di sini kamu bisa **mencari, mempelajari, dan memahami semua function Excel** 
-lengkap dengan kategori, sintaks, deskripsi, contoh kasus, serta tingkat kesulitan.  
+Di sini kamu bisa **Mempelajari, dan memahami semua function Excel** 
+lengkap dengan kategori, sintaks, dan contoh kasus.  
 """)
 
 # ============================
@@ -208,6 +220,19 @@ selected_level = st.sidebar.multiselect(
 # Tambah footer di sidebar
 st.sidebar.markdown(
     "<div class='footer'>Created by <span>Almadha Rafif</span></div>",
+    unsafe_allow_html=True
+)
+
+# Tambah tulisan dan gambar support
+st.sidebar.markdown(
+    """
+    <div style='margin-top:20px; margin-bottom:8px; font-weight:bold; color:#00ADB5; font-size:16px;'>
+        Support Madha lewat link ini
+    </div>
+    <a href='https://lynk.id/almadharp' target='_blank'>
+        <img src='assets/lynkid.png' width='160'/>
+    </a>
+    """,
     unsafe_allow_html=True
 )
 
@@ -243,5 +268,5 @@ else:
             st.markdown(f"**Contoh Kasus:** {row['Contoh Kasus']}")
             st.markdown(f"**Tingkat:** {row['Tingkat']}")
 
-            if pd.notna(row['Catatan']):
-                st.info(f"💡 {row['Catatan']}")
+            # if pd.notna(row['Catatan']):
+            #     st.info(f"💡 {row['Catatan']}")
