@@ -37,8 +37,8 @@ st.markdown("""
             background: none !important;
         }
 
-        /* Hilangkan logo Streamlit default, tapi biarkan toggle sidebar */
-        header[data-testid="stHeader"] > div:first-child button {
+        /* Hilangkan hanya logo Streamlit, bukan toggle */
+        header[data-testid="stHeader"] > div:first-child svg {
             display: none !important;
         }
 
