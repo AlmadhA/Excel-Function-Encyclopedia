@@ -36,8 +36,9 @@ st.markdown("""
         header[data-testid="stHeader"]::before {
             background: none !important;
         }
-        div[data-testid="stToolbar"] {
-            display: none !important;
+            
+        header[data-testid="stHeader"] > div:first-child {
+            display: none !important;  /* hide logo default Streamlit */
         }
 
         /* Title */
