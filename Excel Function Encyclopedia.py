@@ -238,7 +238,7 @@ st.sidebar.markdown(
     "<a href='https://lynk.id/almadharp' target='_blank'>",
     unsafe_allow_html=True
 )
-st.sidebar.image("assets/lynkid.png", width=80)
+st.sidebar.image("data/assets/lynkid.png", width=80)
 st.sidebar.markdown("</a>", unsafe_allow_html=True)
 
 # ============================
