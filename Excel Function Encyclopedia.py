@@ -229,7 +229,7 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     """
     <div style='margin-top:20px; margin-bottom:8px; font-weight:bold; color:#00ADB5; font-size:16px;'>
-        Support Madha lewat link ini
+        Support Kak Madha dengan traktir Nasi Goreng dan Kopi lewat link ini
     </div>
     """,
     unsafe_allow_html=True
@@ -238,7 +238,7 @@ st.sidebar.markdown(
     "<a href='https://lynk.id/almadharp' target='_blank'>",
     unsafe_allow_html=True
 )
-st.sidebar.image("data/assets/lynkid.png", width=80)
+st.sidebar.image("data/assets/lynkid.png", width=250)
 st.sidebar.markdown("</a>", unsafe_allow_html=True)
 
 # ============================
